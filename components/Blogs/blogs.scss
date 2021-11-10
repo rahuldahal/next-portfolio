@@ -162,15 +162,21 @@
 
   &__content {
     margin-top: 4rem;
+    max-width: 900px;
+    padding: var(--padding-400);
+    background: #f4f4f4;
+    border-radius: var(--border-radius);
 
-    h3,
-    h4,
-    h5 {
-      color: var(--black);
+    p,
+    li {
+      font-size: 1.25rem;
+      line-height: 1.8;
     }
 
-    h3 {
-      margin-top: 4rem;
+    h2,
+    h3,
+    h4 {
+      color: var(--black);
     }
   }
 }
