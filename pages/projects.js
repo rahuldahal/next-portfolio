@@ -7,7 +7,7 @@ import { server } from "@utils/getCurrentEnv";
 import { hideLoader } from "@utils/loader";
 import MyHead from "@components/MyHead";
 
-export default function ProjectsPage({ projects }) {
+export default function ProjectsPage({ projects=[] }) {
   useEffect(() => {
     hideLoader();
   }, []);
@@ -31,13 +31,13 @@ export default function ProjectsPage({ projects }) {
   );
 }
 
-export async function getStaticProps(context) {
-  const res = await fetch(`${server}/api/projects`);
-  const { projects } = await res.json();
+// export async function getStaticProps(context) {
+//   const res = await fetch(`${server}/api/projects`);
+//   const { projects } = await res.json();
 
-  return {
-    props: {
-      projects,
-    },
-  };
-}
+//   return {
+//     props: {
+//       projects,
+//     },
+//   };
+// }
