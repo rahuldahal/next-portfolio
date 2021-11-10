@@ -1,33 +1,7 @@
 import React, { useEffect, useState } from "react";
-import marked from "marked";
 import isScreenLargerThan from "@utils/screenSize";
 import moment from "moment";
-
-const prism = require("prismjs");
-require("prismjs/components/");
-
-marked.setOptions({
-  gfm: true,
-  highlight: function highlight(code, lang) {
-    if (prism.languages[lang]) {
-      return prism.highlight(code, prism.languages[lang], lang);
-    }
-    return code;
-  },
-});
-
-const renderer = {
-  heading(text, level) {
-    const reducedLevel = level + 2; // h1 will be h3
-
-    return `
-              <h${reducedLevel}>
-                ${text}
-              </h${reducedLevel}>`;
-  },
-};
-
-marked.use({ renderer });
+import Markdown from "markdown-to-jsx";
 
 export default function Article({ article }) {
   const [widerThan1200, setWiderThan1200] = useState(false);
@@ -56,15 +30,15 @@ export default function Article({ article }) {
         <img src={coverImage} alt="title" className="blog__cover" />
         <div className="blog__contentContainer">
           <h1 className="blog__title">{title}</h1>
-          <p className="blog__updated">
-            <em>{moment(dateUpdated || dateAdded).format("MMM Do YY")}</em>
-            <em>{`${minutesToRead()} min read`}</em>
-          </p>
-          <p className="blog__tags">{blogTags()}</p>
-          <div
-            className="blog__content"
-            dangerouslySetInnerHTML={{ __html: marked(contentMarkdown) }}
-          />
+          <div className="blog__content">
+            <p className="blog__updated">
+              <em>{moment(dateUpdated || dateAdded).format("MMM Do YY")}</em>
+              <em>{`${minutesToRead()} min read`}</em>
+            </p>
+            <p className="blog__tags">{blogTags()}</p>
+            <hr />
+            <Markdown>{contentMarkdown}</Markdown>
+          </div>
         </div>
       </div>
     </article>
