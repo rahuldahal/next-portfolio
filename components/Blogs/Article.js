@@ -17,7 +17,7 @@ export default function Article({ article }) {
 
   function minutesToRead() {
     const words = contentMarkdown.split(" ").length;
-    return Math.floor(words / 200) || 1;
+    return Math.floor(words / 150) || 1;
   }
 
   function blogTags() {
