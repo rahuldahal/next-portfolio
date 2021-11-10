@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "@components/Link";
 import { showLoader } from "@utils/loader";
+import moment from "moment";
 
 export default function BlogCards({ cardDetails }) {
   function getLink(slug) {
@@ -25,9 +26,9 @@ export default function BlogCards({ cardDetails }) {
               <p className="blogCard__tags">
                 <em>#javascript</em>
               </p>
-              <p className="blogCard__dateAdded">
-                {new Date(dateAdded).toLocaleString()}
-              </p>
+              <em className="blogCard__dateAdded">
+                {moment(dateAdded).format("MMM Do YY")}
+              </em>
               <p className="blogCard__brief">{brief}</p>
               <Link
                 to={getLink(slug)}

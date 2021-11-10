@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import marked from "marked";
 import isScreenLargerThan from "@utils/screenSize";
+import moment from "moment";
 
 const prism = require("prismjs");
 require("prismjs/components/");
@@ -56,7 +57,7 @@ export default function Article({ article }) {
         <div className="blog__contentContainer">
           <h1 className="blog__title">{title}</h1>
           <p className="blog__updated">
-            <em>{new Date(dateUpdated || dateAdded).toDateString()}</em>
+            <em>{moment(dateUpdated || dateAdded).format("MMM Do YY")}</em>
             <em>{`${minutesToRead()} min read`}</em>
           </p>
           <p className="blog__tags">{blogTags()}</p>
