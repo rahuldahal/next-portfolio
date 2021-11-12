@@ -44,9 +44,9 @@ export default function Hero() {
                 className="contactBtn"
               />
               <Link
-                to="/projects"
+                to="/opensource"
                 fill="outline"
-                textContent="Projects"
+                textContent="Opensource"
                 className="projectsBtn"
                 onClick={() => showLoader()}
               />

@@ -45,14 +45,6 @@ export default function Expertise() {
                 While using these technologies, I make sure a great{" "}
                 <strong>User Experience</strong> is achieved. Every time.
               </p>
-
-              <Link
-                to="/projects"
-                className="expertise__projects"
-                textContent="Things I have done"
-                fill="filled"
-                onClick={() => showLoader()}
-              />
             </div>
             <ExpertiseExpand
               focused={isExpertiseFocused}
