@@ -33,7 +33,20 @@ export default function Hero() {
             </h1>
 
             <p className="hero__subheading subheading">
-              MERN/JAM stack developer
+              <span className="hero__jobTitle">
+                Associate Software Engineer
+              </span>
+              <span className="hero__currentCompany">
+                {" "}
+                @
+                <a
+                  href="https://www.lftechnology.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LFTechnology
+                </a>
+              </span>
             </p>
 
             <div className="hero__cta">
