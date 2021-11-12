@@ -16,22 +16,17 @@ export default function About() {
         <div className="aboutHeader__hook">
           <h2>Building Software Applications with JavaScript.</h2>
           <p>
-            Application development is not just about making the functionalities
-            &ldquo;work&rdquo;. But, also about delivering a great user
+            Application development is not just about making the functionalities work. But, also about delivering a great user
             experience while interacting with the application.
           </p>
-          <h3>I use JavaScript and its tools to create,</h3>
+          <p>I&apos;ve been using JavaScript and its tools since <strong>2018</strong> to build usable and accessible software applications.</p>
           <p>
-            usable, accessible, functional,
-            <span> as well as</span>
-            credible applications
+            Throughout the development process, I make sure that,
           </p>
-          <p>
-            Throughout the development process, I try to come up with the
-            solutions to the problems that an user might face throughout the
-            usage of an application. Which in turn, helps the end user to have
-            an amazing User Experience.
-          </p>
+          <ul>
+            <li>The business goals and objectives of the them is met.</li>
+            <li>The end user&apos;s needs, abilities, and their limitations are taken into account.</li>
+          </ul>
         </div>
 
         <div className="aboutHeader__details">
