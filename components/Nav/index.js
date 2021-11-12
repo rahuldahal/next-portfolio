@@ -110,13 +110,6 @@ export default function Nav({ current }) {
               isActive={current === "opensource"}
               setIsHamburgerClicked={setIsHamburgerClicked}
             />
-            <Link
-              to="https://drive.google.com/file/d/1-yD66LzfZsAe6DDLNwypng3cyPOn_vLE/view?usp=sharing"
-              textContent="Resume"
-              className="nav__link"
-              newTab
-              setIsHamburgerClicked={setIsHamburgerClicked}
-            />
             <NavLink
               to="/blogs"
               textContent="Blogs"
