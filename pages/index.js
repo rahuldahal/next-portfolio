@@ -15,33 +15,22 @@ export default function LandingPage({info}) {
     hideLoader();
   }, []);
 
-  const metaTags = {
-    title:
-      `Rahul Dahal | ${title}`,
-    url: "https://rahuldahal.com.np",
-    description: `${description} Currently working as a ${title} at ${company.name}`,
-    image: "https://rahuldahal.com.np/images/logo.png",
-  };
+  // const metaTags = {
+  //   title:
+  //     `Rahul Dahal | ${title}`,
+  //   url: "https://rahuldahal.com.np",
+  //   description: `${description} Currently working as a ${title} at ${company.name}`,
+  //   image: "https://rahuldahal.com.np/images/logo.png",
+  // };
 
   return (
     <>
-      <MyHead {...metaTags} />
+      {/* <MyHead {...metaTags} /> */}
       <Nav />
       <Landing />
       <Footer />
       <LoaderOverlay />
     </>
   );
-}
-
-export async function getStaticProps(context) {
-  const res = await fetch(`${server}/api/info`);
-  const { infos } = await res.json();
-
-  return {
-    props: {
-      info: infos[0].data,
-    },
-  };
 }
 
