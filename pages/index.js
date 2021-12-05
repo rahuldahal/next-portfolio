@@ -9,7 +9,7 @@ import { server } from "@utils/getCurrentEnv";
 
 export default function LandingPage({info}) {
 
-  const {title, company, description} = info;
+  // const {title, company, description} = info;
 
   useEffect(() => {
     hideLoader();
