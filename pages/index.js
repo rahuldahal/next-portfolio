@@ -5,18 +5,21 @@ import Footer from "@components/Footer";
 import LoaderOverlay from "@components/LoaderOverlay";
 import { hideLoader } from "@utils/loader";
 import MyHead from "@components/MyHead";
+import { server } from "@utils/getCurrentEnv";
 
-export default function LandingPage() {
+export default function LandingPage({info}) {
+
+  const {title, company, description} = info;
+
   useEffect(() => {
     hideLoader();
   }, []);
 
   const metaTags = {
     title:
-      "Rahul Dahal | Web Developer with an eye for improvising User Experience",
+      `Rahul Dahal | ${title}`,
     url: "https://rahuldahal.com.np",
-    description:
-      "A Web Developer with an aim to improvise User Experience. My responsibility is to make the user's experience on the app usable, accessible, functional and credible.",
+    description: `${description} Currently working as a ${title} at ${company.name}`,
     image: "https://rahuldahal.com.np/images/logo.png",
   };
 
@@ -30,3 +33,15 @@ export default function LandingPage() {
     </>
   );
 }
+
+export async function getStaticProps(context) {
+  const res = await fetch(`${server}/api/info`);
+  const { infos } = await res.json();
+
+  return {
+    props: {
+      info: infos[0].data,
+    },
+  };
+}
+
