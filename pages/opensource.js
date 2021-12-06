@@ -23,7 +23,7 @@ export default function ProjectsPage({ projects }) {
   return (
     <>
       <MyHead {...metaTags} />
-      <Nav current="projects" />
+      <Nav current="opensource" />
       <Projects works={projects} />
       <Footer />
       <LoaderOverlay />
