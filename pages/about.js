@@ -6,18 +6,20 @@ import Footer from "@components/Footer";
 import LoaderOverlay from "@components/LoaderOverlay";
 import { hideLoader } from "@utils/loader";
 import MyHead from "@components/MyHead";
+import { server } from "@utils/getCurrentEnv";
 
-export default function AboutPage() {
+export default function AboutPage({info}) {
+  const {title, company, description} = info;
+
   useEffect(() => {
     hideLoader();
   }, []);
 
   const metaTags = {
-    title: "About | Rahul Dahal",
+    title: "Rahul Dahal | About",
     url: "https://rahuldahal.com.np/about",
-    description:
-      "A Web Developer with an aim to improvise User Experience. My responsibility is to make the user's experience on the app usable, accessible, functional and credible while developing MERN and JAM stack apps.",
-    image: "https://rahuldahal.com.np/images/thatsme.png",
+    description: `${description} Currently working as a ${title} at ${company.name}`,
+    image: "https://rahuldahal.com.np/images/logo.png",
   };
 
   return (
@@ -29,4 +31,15 @@ export default function AboutPage() {
       <LoaderOverlay />
     </>
   );
+}
+
+export async function getStaticProps(context) {
+  const res = await fetch(`${server}/api/info`);
+  const { infos } = await res.json();
+
+  return {
+    props: {
+      info: infos[0].data,
+    },
+  };
 }
