@@ -14,9 +14,9 @@ export default function ProjectsPage({ projects }) {
 
   const metaTags = {
     title: "Projects | Rahul Dahal",
-    url: "https://rahuldahal.com.np/projects",
+    url: "https://rahuldahal.com.np/opensource",
     description:
-      "I have been doing MERN and JAM stack application development since 2018. Here is the list of some of the MERN and JAM stack projects that I have done or, contributed to.",
+      "I have been doing opensource contributions since 2018. Here is the list of some of the opensource projects that I have done or, contributed to.",
     image: "https://rahuldahal.com.np/images/logo.png",
   };
 
