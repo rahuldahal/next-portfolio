@@ -6,11 +6,13 @@ import { showLoader } from "@utils/loader";
 import Picture from "@components/Picture";
 import AnimatedParticles from "@components/Particles";
 
-export default function Hero() {
+export default function Hero({info}) {
   const source = {
     png: "images/thatsme.png",
     default: "images/thatsme.png",
   };
+
+  const {title, company} = info;
 
   const [illustration, setIllustration] = useState("small");
 
@@ -34,17 +36,17 @@ export default function Hero() {
 
             <p className="hero__subheading subheading">
               <span className="hero__jobTitle">
-                Associate Software Engineer
+                {title}
               </span>
               <span className="hero__currentCompany">
                 {" "}
                 @
                 <a
-                  href="https://www.lftechnology.com/"
+                  href={company.website}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  LFTechnology
+                  {company.name}
                 </a>
               </span>
             </p>

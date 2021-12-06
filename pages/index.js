@@ -27,7 +27,7 @@ export default function LandingPage({info}) {
     <>
       <MyHead {...metaTags} />
       <Nav />
-      <Landing />
+      <Landing info={info} />
       <Footer />
       <LoaderOverlay />
     </>

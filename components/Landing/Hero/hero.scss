@@ -40,8 +40,12 @@
   }
 
   &__subheading {
-    width: max-content;
+    max-width: 300px;
     margin-top: 2.2rem;
+
+    @include widerThan768 {
+      max-width: max-content;
+    }
   }
 
   &__currentCompany > a {
