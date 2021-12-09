@@ -1,5 +1,4 @@
 import Link from "@components/Link";
-import AnimatedParticles from "@components/Particles";
 import Picture from "@components/Picture";
 import React from "react";
 
@@ -11,7 +10,6 @@ export default function About() {
 
   return (
     <main className="aboutHeader">
-      <AnimatedParticles />
       <div className="contentsWrap">
         <div className="aboutHeader__hook">
           <h2>Building Software Applications with JavaScript.</h2>
