@@ -50,6 +50,12 @@ h6 {
   line-height: 1.5rem;
 }
 
+.codeBackground {
+  background: url("/images/code.jpg") center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .overlay {
   &::before {
     content: "";

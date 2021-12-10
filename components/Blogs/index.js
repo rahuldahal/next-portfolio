@@ -4,7 +4,7 @@ import BlogCards from "./BlogCards";
 
 export default function Blogs({ blogDetails, handle }) {
   return (
-    <main className="blogCards">
+    <main className="blogCards overlay codeBackground">
       <div className="contentsWrap">
         <BlogCards cardDetails={blogDetails} />
       </div>

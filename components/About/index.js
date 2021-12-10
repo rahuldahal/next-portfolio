@@ -9,7 +9,7 @@ export default function About() {
   };
 
   return (
-    <main className="aboutHeader">
+    <main className="aboutHeader overlay codeBackground">
       <div className="contentsWrap">
         <div className="aboutHeader__hook">
           <h2>Building Software Applications with JavaScript.</h2>

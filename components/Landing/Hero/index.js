@@ -23,7 +23,7 @@ export default function Hero({info}) {
 
   return (
     <>
-      <section className="hero overlay">
+      <section className="hero overlay codeBackground">
         <div className="contentsWrap">
           <div className="headingAndCTA">
             <h1 className="hero__heading">
