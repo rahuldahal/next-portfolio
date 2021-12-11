@@ -81,20 +81,6 @@
     content: "\f0ae";
   }
 
-  &__image img {
-    mask: url("/svgs/blob.svg") no-repeat;
-    background: var(--white);
-    transform: translateY(0);
-    will-change: transform;
-    animation: updown 1s ease-in-out alternate infinite;
-  }
-
-  @keyframes updown {
-    100% {
-      transform: translateY(20px);
-    }
-  }
-
   &__illustration {
     position: absolute;
     z-index: -2;

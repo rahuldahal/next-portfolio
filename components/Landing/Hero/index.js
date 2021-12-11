@@ -67,7 +67,7 @@ export default function Hero({info}) {
 
           {illustration === "large" ? (
             <Picture
-              className="hero__image"
+              className="displayPicture"
               source={source}
               alt="Rahul Dahal Smiling to the camera"
               width="500px"

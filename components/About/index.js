@@ -28,12 +28,13 @@ export default function About() {
         </div>
 
         <div className="aboutHeader__details">
-          <Picture
-            source={source}
-            alt="Rahul Dahal Smiling to the camera"
-            width="60vw"
-            height="60vw"
-          />
+        <Picture
+              className="displayPicture"
+              source={source}
+              alt="Rahul Dahal Smiling to the camera"
+              width="300px"
+              height="300px"
+            />
           <Link
             textContent="Contact"
             to="#contact"

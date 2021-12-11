@@ -172,3 +172,18 @@ h6 {
     visibility: hidden;
   }
 }
+
+.displayPicture {
+  display: block;
+  mask: url("/svgs/blob.svg") no-repeat;
+  background: var(--white);
+  transform: translateY(0);
+  will-change: transform;
+  animation: updown 1s ease-in-out alternate infinite;
+}
+
+@keyframes updown {
+  100% {
+    transform: translateY(20px);
+  }
+}
