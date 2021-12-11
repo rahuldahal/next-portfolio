@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "@components/Link";
 import isScreenLargerThan from "@utils/screenSize";
-import UsabilityIllustration from "@svgs/usability_testing.svg";
 import { showLoader } from "@utils/loader";
 import Picture from "@components/Picture";
 
@@ -13,11 +12,11 @@ export default function Hero({info}) {
 
   const {title, company} = info;
 
-  const [illustration, setIllustration] = useState("small");
+  const [isScreenWide, setIsScreenWide] = useState(false);
 
   useEffect(() => {
     if (isScreenLargerThan(1201)) {
-      setIllustration("large");
+      setIsScreenWide(true);
     }
   }, []);
 
@@ -65,7 +64,7 @@ export default function Hero({info}) {
             </div>
           </div>
 
-          {illustration === "large" ? (
+          {isScreenWide && (
             <Picture
               className="displayPicture"
               source={source}
@@ -73,8 +72,6 @@ export default function Hero({info}) {
               width="500px"
               height="500px"
             />
-          ) : (
-            <UsabilityIllustration className="hero__illustration" />
           )}
         </div>
       </section>
