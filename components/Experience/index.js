@@ -1,33 +1,50 @@
 import Button from '@components/Button';
-import React, { useState } from 'react';
+import isScreenLargerThan from '@utils/screenSize';
+import React, { useEffect, useState } from 'react';
 import { fulltime, hobby } from './experience';
 
 export default function Experience() {
   const [type, setType] = useState('fulltime');
+  const [widerThan1024, setWiderThan1024] = useState(false);
+
+  useEffect(() => {
+    if (isScreenLargerThan(1025)) {
+      setWiderThan1024(true);
+    }
+  }, []);
 
   return (
     <section className="experience">
       <h2>Where I&apos;ve Worked</h2>
-      <div className="experience__type">
-        <Button
-          fill={type === 'fulltime' ? 'filled' : 'outline'}
-          type="button"
-          textContent="FullTime"
-          onClick={() => setType('fulltime')}
-        />
-        <Button
-          fill={type === 'hobby' ? 'filled' : 'outline'}
-          type="button"
-          textContent="Hobby/Part-Time"
-          onClick={() => setType('hobby')}
-        />
-        <div className="experience__list">
-          {type === 'fulltime' ? (
-            <Works type={type} list={fulltime} />
-          ) : (
-            <Works type={type} list={hobby} />
-          )}
+      <div className="experience__contentWrap">
+        <div className="experience__type">
+          <Button
+            fill={type === 'fulltime' ? 'filled' : 'outline'}
+            type="button"
+            textContent="FullTime"
+            onClick={() => setType('fulltime')}
+          />
+          <Button
+            fill={type === 'hobby' ? 'filled' : 'outline'}
+            type="button"
+            textContent="Hobby/Part-Time"
+            onClick={() => setType('hobby')}
+          />
+          <div className="experience__list">
+            {type === 'fulltime' ? (
+              <Works type={type} list={fulltime} />
+            ) : (
+              <Works type={type} list={hobby} />
+            )}
+          </div>
         </div>
+        {widerThan1024 ? (
+          <img
+            src="/svgs/works.svg"
+            alt="Tasks completed in vector format"
+            className="experience__image"
+          />
+        ) : null}
       </div>
     </section>
   );

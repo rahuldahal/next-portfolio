@@ -7,6 +7,17 @@
   overflow-x: hidden;
   clip-path: var(--clip-path);
 
+  &__contentWrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__image {
+    max-width: 480px;
+  }
+
   &__type button {
     cursor: pointer;
     margin-right: 1rem;
