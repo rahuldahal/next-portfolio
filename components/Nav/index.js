@@ -60,17 +60,6 @@ export default function Nav({ current }) {
         </NavLink>
 
         <div className="nav__togglers">
-          <div
-            className="nav__theme"
-            role="button"
-            tabIndex="0"
-            onClick={() => themeToggleHandler()}
-            onKeyUp={(e) => themeToggleHandler(e)}
-          >
-            <Toggle className="nav__themeToggler" title="Dark Mode Toggler" />
-            <small>Dark Mode</small>
-          </div>
-
           {isScreenNarrow ? (
             <div
               role="button"
