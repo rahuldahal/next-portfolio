@@ -1,0 +1,44 @@
+.experience {
+  padding: var(--padding-400);
+  padding-top: 5vh;
+  padding-bottom: 30vh;
+  color: var(--white);
+  background-image: var(--primary-gradient-horizontal);
+  overflow-x: hidden;
+  clip-path: var(--clip-path);
+
+  &__type button {
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+
+  &__company {
+    width: max-content;
+    margin-bottom: 0.5rem;
+  }
+
+  &__jobTitle {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: rgba(var(--white-RGB), 0.9);
+  }
+
+  &__start {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+
+  &__end {
+    display: inline-block;
+    margin-left: 0.5rem;
+  }
+
+  &__responsibilities {
+    max-width: 600px;
+    margin-top: 1rem;
+  }
+
+  &__responsibilities li {
+    line-height: 1.5;
+  }
+}
