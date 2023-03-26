@@ -1,6 +1,6 @@
-import React from "react";
-import ContactForm from "./ContactForm";
-import Link from "../Link";
+import React from 'react';
+import ContactForm from './ContactForm';
+import Link from '../Link';
 
 export default function Footer() {
   return (
@@ -24,27 +24,32 @@ export default function Footer() {
 }
 
 function SocialLinks() {
+  const socialDetails = [
+    {
+      title: 'Github Profile',
+      url: 'https://github.com/rahuldahal',
+      text: '/rahuldahal',
+    },
+    {
+      title: 'LinkedIn Profile',
+      url: 'https://www.linkedin.com/in/rahuldahal',
+      text: '/rahuldahal',
+    },
+    {
+      title: 'Facebook Profile',
+      url: 'https://facebook.com/rdaahal',
+      text: '/rdaahal',
+    },
+  ];
   return (
     <div className="footer__socialLinks">
       <h3>Also, connect with me on:</h3>
-      <Link
-        to="https://github.com/rahuldahal"
-        textContent="/rahuldahal"
-        newTab
-        title="Github Profile"
-      />
-      <Link
-        to="https://twitter.com/raahuldaahal"
-        textContent="/raahuldaahaal"
-        newTab
-        title="Twitter Profile"
-      />
-      <Link
-        to="https://facebook.com/mynameisrahuldahal"
-        textContent="/raahuldaahaal"
-        newTab
-        title="Facebook Profile"
-      />
+      {socialDetails.map((social, index) => {
+        const { title, url, text } = social;
+        return (
+          <Link key={index} to={url} textContent={text} newTab title={title} />
+        );
+      })}
     </div>
   );
 }
