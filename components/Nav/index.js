@@ -1,32 +1,32 @@
-import React, { useEffect, useState } from "react";
-import Toggle from "@svgs/toggle.svg";
-import Logo from "@svgs/logo.svg";
-import Link from "../Link";
-import NavLink from "./NavLink";
+import React, { useEffect, useState } from 'react';
+import Toggle from '@svgs/toggle.svg';
+import Logo from '@svgs/logo.svg';
+import Link from '../Link';
+import NavLink from './NavLink';
 
 export default function Nav({ current }) {
   const [isScreenNarrow, setIsScreenNarrow] = useState(true);
   const [isHamburgerClicked, setIsHamburgerClicked] = useState(false);
 
   useEffect(() => {
-    setIsScreenNarrow(matchMedia("(max-width: 768px)").matches);
+    setIsScreenNarrow(matchMedia('(max-width: 768px)').matches);
   }, []);
 
   useEffect(() => {
-    if (localStorage.getItem("theme") === "dark") {
+    if (localStorage.getItem('theme') === 'dark') {
       document
-        .querySelector(".nav__themeToggler")
-        .classList.add("nav__themeToggler--dark");
+        .querySelector('.nav__themeToggler')
+        .classList.add('nav__themeToggler--dark');
     }
   }, [current]);
 
   function hamBurgerClickHandler(e) {
     if (e) {
       switch (e.key) {
-        case "Enter":
+        case 'Enter':
           setIsHamburgerClicked(true);
           break;
-        case "Escape":
+        case 'Escape':
           setIsHamburgerClicked(false);
           break;
       }
@@ -38,17 +38,17 @@ export default function Nav({ current }) {
   }
 
   function themeToggleHandler(e) {
-    const theme = localStorage.getItem("theme");
-    if ((e && e.key === "Enter") || !e) {
+    const theme = localStorage.getItem('theme');
+    if ((e && e.key === 'Enter') || !e) {
       if (theme) {
-        localStorage.removeItem("theme");
+        localStorage.removeItem('theme');
       } else {
-        localStorage.setItem("theme", "dark");
+        localStorage.setItem('theme', 'dark');
       }
       document
-        .querySelector(".nav__themeToggler")
-        .classList.toggle("nav__themeToggler--dark");
-      document.documentElement.classList.toggle("dark");
+        .querySelector('.nav__themeToggler')
+        .classList.toggle('nav__themeToggler--dark');
+      document.documentElement.classList.toggle('dark');
     }
   }
 
@@ -82,38 +82,32 @@ export default function Nav({ current }) {
               <span
                 className={
                   isHamburgerClicked
-                    ? "nav__hamburgerToggler nav__hamburgerToggler--active"
-                    : "nav__hamburgerToggler"
+                    ? 'nav__hamburgerToggler nav__hamburgerToggler--active'
+                    : 'nav__hamburgerToggler'
                 }
               />
               <small>Menu</small>
             </div>
           ) : (
-            ""
+            ''
           )}
           <div
             className={
               isHamburgerClicked
-                ? "nav__links nav__links--active"
-                : "nav__links"
+                ? 'nav__links nav__links--active'
+                : 'nav__links'
             }
           >
             <NavLink
-              to="/about"
-              textContent="About"
-              isActive={current === "about"}
-              setIsHamburgerClicked={setIsHamburgerClicked}
-            />
-            <NavLink
               to="/opensource"
               textContent="Opensource"
-              isActive={current === "opensource"}
+              isActive={current === 'opensource'}
               setIsHamburgerClicked={setIsHamburgerClicked}
             />
             <NavLink
               to="/blogs"
               textContent="Blogs"
-              isActive={current === "blogs"}
+              isActive={current === 'blogs'}
               setIsHamburgerClicked={setIsHamburgerClicked}
             />
           </div>

@@ -1,4 +1,4 @@
-@import "./media";
+@import './media';
 
 *,
 *::before,
@@ -67,8 +67,8 @@ html {
   );
 
   // fonts
-  --heading-font: "Roboto", arial, verdana, Tahoma, sans-serif;
-  --body-font: "Roboto", arial, verdana, Tahoma, sans-serif;
+  --heading-font: 'Roboto', arial, verdana, Tahoma, sans-serif;
+  --body-font: 'Roboto', arial, verdana, Tahoma, sans-serif;
 
   --black: rgb(0, 14, 20);
   --black-RGB: 0, 14, 20;
@@ -109,7 +109,7 @@ html {
 }
 
 ::selection {
-  background-color: var(--accent-clr-400);
+  background-color: var(--accent-clr-300);
   color: var(--black);
 }
 
@@ -190,8 +190,8 @@ select {
   border-radius: 0.3rem;
 }
 
-[type="radio"],
-[type="checkbox"] {
+[type='radio'],
+[type='checkbox'] {
   display: inline-block;
 }
 
@@ -200,15 +200,15 @@ textarea:focus {
   border: 1px solid var(--primary-clr-400);
 }
 
-@import "./_common.scss";
-@import "../components/Button/button.scss";
-@import "../components/Link/link.scss";
-@import "../components/Nav/nav.scss";
-@import "../components/Landing/Hero/hero.scss";
-@import "../components/Footer/footer.scss";
-@import "../components/About/about.scss";
-@import "../components/Projects/projects.scss";
-@import "../components/Blogs/blogs.scss";
-@import "./prism.css";
-@import "./dark";
-@import "../components/Admin/admin.scss";
+@import './_common.scss';
+@import '../components/Button/button.scss';
+@import '../components/Link/link.scss';
+@import '../components/Nav/nav.scss';
+@import '../components/Landing/Hero/hero.scss';
+@import '../components/Footer/footer.scss';
+@import '../components/AboutMe/aboutMe.scss';
+@import '../components/Projects/projects.scss';
+@import '../components/Blogs/blogs.scss';
+@import './prism.css';
+@import './dark';
+@import '../components/Admin/admin.scss';

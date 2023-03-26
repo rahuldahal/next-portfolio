@@ -1,20 +1,18 @@
-.aboutHeader {
-  position: relative;
-  z-index: 3;
+.aboutMeHeader {
   padding: var(--padding-400);
-  padding-top: 20vh;
-  padding-bottom: 10vh;
+  padding-bottom: 30vh;
   color: var(--white);
   overflow-x: hidden;
   clip-path: var(--clip-path);
 
   @include widerThan1200 {
+    padding-top: 20vh;
     overflow: unset;
   }
 
   .contentsWrap {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
 
@@ -27,38 +25,43 @@
   &__hook {
     max-width: 720px;
     margin-top: 3rem;
+    color: var(--black);
 
     @include widerThan1024 {
       margin-top: 0;
       margin-left: 3rem;
       padding: var(--padding-400);
+      color: var(--white);
       background: var(--primary-gradient-horizontal);
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow-x-reverse);
     }
 
-    p,
-    mark {
-      color: rgba(var(--white-RGB), 0.9);
-    }
+    p {
+      color: rgba(var(--black-RGB), 0.7);
 
-    mark {
-      font-weight: bold;
-      margin-right: 0.5rem;
-      letter-spacing: 1px;
-
-      &::after {
-        bottom: 0.5rem;
-        background: var(--primary-clr-600);
+      @include widerThan1024 {
+        color: rgba(var(--white-RGB), 0.9);
       }
     }
 
-    span {
-      margin-right: 0.5rem;
+    mark {
+      color: var(--white);
+      background-color: var(--primary-clr-300);
+      padding: 2px;
+
+      @include widerThan1024 {
+        color: var(--black);
+        background-color: var(--accent-clr-300);
+      }
     }
 
-    li {
-      margin-bottom: 1rem;
+    a {
+      color: var(--primary-clr-400);
+
+      @include widerThan1024 {
+        color: var(--accent-clr-300);
+      }
     }
   }
 
@@ -77,6 +80,10 @@
 
   &__contact,
   &__activity {
+    color: var(--white);
+    background-image: var(--primary-gradient-horizontal);
+    border: 2px solid var(--primary-clr-400);
+    border-bottom-color: var(--primary-clr-500);
     margin-top: 0.5rem;
   }
 
@@ -84,13 +91,13 @@
     margin-right: 1rem;
 
     &::before {
-      content: "\f2b9";
+      content: '\f2b9';
     }
   }
 
   &__activity {
     &::before {
-      content: "\f201";
+      content: '\f201';
     }
   }
 }
