@@ -58,8 +58,8 @@
     padding: var(--padding-400);
 
     &::before {
-      content: "\f5fd";
-      font-family: "Font Awesome 5 Free";
+      content: '\f5fd';
+      font-family: 'Font Awesome 5 Free';
       font-weight: 900;
       margin-right: 0.5rem;
     }
@@ -134,14 +134,14 @@
         margin-bottom: 0.5rem;
 
         &::before {
-          content: "\f058";
+          content: '\f058';
           display: inline-block;
           margin-right: 0.5rem;
           color: var(--primary-clr-400);
           font-style: normal;
           font-variant: normal;
           font-weight: 900;
-          font-family: "Font Awesome 5 Free";
+          font-family: 'Font Awesome 5 Free';
           text-rendering: auto;
           -webkit-font-smoothing: antialiased;
         }
@@ -197,13 +197,13 @@
     margin-left: 0.5rem;
 
     &::before {
-      font-family: "Font Awesome 5 Brands";
-      content: "\f09b";
+      font-family: 'Font Awesome 5 Brands';
+      content: '\f09b';
     }
   }
 
   &__url::before {
-    content: "\f35d";
+    content: '\f35d';
   }
 
   &__screenshots {
@@ -219,6 +219,7 @@
     }
 
     img {
+      min-width: 300px;
       object-fit: contain;
     }
   }
@@ -257,7 +258,7 @@
     left: 0;
 
     &::before {
-      content: "\f0d9";
+      content: '\f0d9';
     }
   }
 
@@ -269,8 +270,8 @@
     }
 
     &::after {
-      content: "\f0da";
-      font-family: "Font Awesome 5 Free";
+      content: '\f0da';
+      font-family: 'Font Awesome 5 Free';
       font-weight: 900;
       margin-right: 0.5rem;
     }
