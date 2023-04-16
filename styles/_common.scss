@@ -8,7 +8,7 @@
   border-radius: var(--border-radius);
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: -0.125rem;
     top: -12.5%;
@@ -20,12 +20,12 @@
 }
 
 h1 {
-  font-size: 3.125rem; // 50px
+  font-size: 3rem; // 48px
   line-height: 1;
   font-weight: 900;
 }
 h2 {
-  font-size: 2.375rem; // 38px
+  font-size: 2.125rem; // 34px
   line-height: 1;
   font-weight: 900;
 }
@@ -51,14 +51,14 @@ h6 {
 }
 
 .codeBackground {
-  background: url("/images/code.jpg") center center;
+  background: url('/images/code.jpg') center center;
   background-size: cover;
   background-attachment: fixed;
 }
 
 .overlay {
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
     top: 0;
@@ -85,7 +85,7 @@ h6 {
 
 .stacked {
   &::after {
-    content: "";
+    content: '';
     visibility: hidden;
     position: absolute;
     bottom: 0;
@@ -159,7 +159,7 @@ h6 {
   }
 
   &::after {
-    content: "#UXMatters";
+    content: '#UXMatters';
     position: absolute;
     bottom: 2rem;
     left: 50%;
@@ -175,7 +175,7 @@ h6 {
 
 .displayPicture {
   display: block;
-  mask: url("/svgs/blob.svg") no-repeat;
+  mask: url('/svgs/blob.svg') no-repeat;
   background: var(--white);
   transform: translateY(0);
   will-change: transform;
