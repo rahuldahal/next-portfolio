@@ -1,10 +1,10 @@
-import React from "react";
-import Button from "@components/Button";
-import Link from "@components/Link";
-import ProjectAttributes from "./ProjectAttributes";
+import React from 'react';
+import Button from '@components/Button';
+import Link from '@components/Link';
+import ProjectAttributes from './ProjectAttributes';
 
 export default function ProjectsList({ works }) {
-  const sortedWorks = works.sort((a, b) => a.data.priority < b.data.priority);
+  const sortedWorks = works.sort((a, b) => b.data.priority - a.data.priority);
 
   return (
     <div className="projects__wrap">
@@ -54,7 +54,7 @@ export default function ProjectsList({ works }) {
                   src={
                     screenshots.length
                       ? screenshots[0]
-                      : "https://unsplash.it/300/200"
+                      : 'https://unsplash.it/300/200'
                   }
                   alt=""
                   width="300px"
