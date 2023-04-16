@@ -1,61 +1,63 @@
 {
-    "root": true,
-    "parser": "babel-eslint",
-    "rules": {
-      "quotes": [2, "double"],
-      "no-console": 1,
-      "react/prop-types": 0,
-      "no-restricted-globals": 1,
-      "react/button-has-type": 1,
-      "default-case": 0,
-      "react/no-array-index-key": 1,
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-      "jsx-a11y/label-has-associated-control": [2, {
+  "root": true,
+  "parser": "babel-eslint",
+  "rules": {
+    "quotes": [2, "single"],
+    "no-console": 1,
+    "react/prop-types": 0,
+    "no-restricted-globals": 1,
+    "react/button-has-type": 1,
+    "default-case": 0,
+    "react/no-array-index-key": 1,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
         "depth": 2
-      }]
-    } ,
-    "extends": [
-      "eslint:recommended",
-      "plugin:import/warnings",
-      "plugin:import/errors",
-      "plugin:react/recommended",
-      "plugin:jsx-a11y/recommended",
-      "airbnb",
-      "prettier",
-      "prettier/react",
-      "plugin:react-hooks/recommended"
-    ],
-    "env": {
-      "browser": true,
-      "commonjs": true,
-      "es6": true,
-      "node": true
-    },
-    "parserOptions": {
-      "ecmaVersion": 2018,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
       }
+    ]
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/warnings",
+    "plugin:import/errors",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "airbnb",
+    "prettier",
+    "prettier/react",
+    "plugin:react-hooks/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
     },
-    "settings": {
-      "react": {
-        "version": "detect"
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@components", "./components"],
+          ["@styles", "./styles"],
+          ["@utils", "./utils"],
+          ["@svgs", "./public/svgs"]
+        ]
       },
-      "import/resolver": {
-        "alias": {
-          "map": [
-            ["@components", "./components"],
-            ["@styles", "./styles"],
-            ["@utils", "./utils"],
-            ["@svgs", "./public/svgs"]
-          ]
-        },
-        "node": {
-          "extensions": [".js", ".jsx", ".ts", ".tsx"]
-        }
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
-    },
-    "plugins": ["react", "import", "jsx-a11y", "react-hooks"]
-  }
-  
+    }
+  },
+  "plugins": ["react", "import", "jsx-a11y", "react-hooks"]
+}
