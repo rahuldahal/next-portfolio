@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import isScreenLargerThan from "@utils/screenSize";
-import moment from "moment";
-import Markdown from "markdown-to-jsx";
+import React, { useEffect, useState } from 'react';
+import isScreenLargerThan from '@utils/screenSize';
+import moment from 'moment';
+import Markdown from 'markdown-to-jsx';
 
 export default function Article({ article }) {
   const [widerThan1200, setWiderThan1200] = useState(false);
@@ -16,7 +16,7 @@ export default function Article({ article }) {
     article;
 
   function minutesToRead() {
-    const words = contentMarkdown.split(" ").length;
+    const words = contentMarkdown.split(' ').length;
     return Math.floor(words / 150) || 1;
   }
 
@@ -32,8 +32,10 @@ export default function Article({ article }) {
           <h1 className="blog__title">{title}</h1>
           <div className="blog__content">
             <p className="blog__updated">
-              <em>{moment(dateUpdated || dateAdded).format("MMM Do YY")}</em>
-              <em>{`${minutesToRead()} min read`}</em>
+              <span>
+                {moment(dateUpdated || dateAdded).format('MMM Do YY')}
+              </span>
+              <span>{`${minutesToRead()} min read`}</span>
             </p>
             <p className="blog__tags">{blogTags()}</p>
             <hr />

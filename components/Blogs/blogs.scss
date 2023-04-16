@@ -37,16 +37,6 @@
     max-width: 1200px;
   }
 
-  &__title {
-    .link {
-      color: var(--white);
-    }
-
-    @include widerThan1200 {
-      max-width: 80%;
-    }
-  }
-
   &__content {
     width: 100%;
     padding: 1rem;
@@ -57,7 +47,17 @@
 
     @include widerThan1200 {
       margin: auto;
-      margin-left: 4rem;
+      margin-left: 2rem;
+    }
+  }
+
+  &__title {
+    .link {
+      color: var(--white);
+    }
+
+    @include widerThan1200 {
+      max-width: 80%;
     }
   }
 
@@ -84,14 +84,14 @@
 
   &__link {
     &::before {
-      font-family: "Font Awesome 5 Brands";
-      content: "\f4d5";
+      font-family: 'Font Awesome 5 Brands';
+      content: '\f4d5';
     }
   }
 }
 
 .blog {
-  padding: 20vh var(--padding-400);
+  padding: 25vh var(--padding-400);
 
   &__cover,
   &__content,
@@ -139,32 +139,37 @@
   }
 
   &__updated {
-    em {
+    span {
       margin-right: 1rem;
     }
 
-    em::before {
-      content: "#";
-      font-family: "Font Awesome 5 Free";
+    span::before {
+      content: '#';
+      font-family: 'Font Awesome 5 Free';
       font-weight: 900;
       margin-right: 0.5rem;
     }
 
-    em:first-child::before {
-      content: "\f784";
+    span:first-child::before {
+      content: '\f784';
     }
 
-    em:last-child::before {
-      content: "\f017";
+    span:last-child::before {
+      content: '\f017';
     }
   }
 
   &__content {
-    margin-top: 4rem;
     max-width: 900px;
-    padding: var(--padding-400);
-    background: #f4f4f4;
     border-radius: var(--border-radius);
+
+    @include widerThan1200 {
+      margin-top: 4rem;
+      background: #f4f4f4;
+      padding: var(--padding-400);
+      margin: auto;
+      margin-left: 4rem;
+    }
 
     p,
     li {
@@ -176,6 +181,11 @@
     h3,
     h4 {
       color: var(--black);
+    }
+
+    pre {
+      color: var(--white);
+      background: var(--primary-clr-300);
     }
   }
 }
