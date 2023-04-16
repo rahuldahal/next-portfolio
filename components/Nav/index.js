@@ -93,6 +93,12 @@ export default function Nav({ current }) {
               isActive={current === 'opensource'}
               setIsHamburgerClicked={setIsHamburgerClicked}
             />
+            <NavLink
+              to="/blogs"
+              textContent="Blogs"
+              isActive={current === 'blogs'}
+              setIsHamburgerClicked={setIsHamburgerClicked}
+            />
           </div>
         </div>
       </div>
