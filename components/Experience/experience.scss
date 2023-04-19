@@ -3,7 +3,7 @@
   padding-top: 5vh;
   padding-bottom: 30vh;
   color: var(--white);
-  background-image: var(--primary-gradient-horizontal);
+  background-color: var(--primary-clr-500);
   overflow-x: hidden;
   clip-path: var(--clip-path);
 
@@ -37,6 +37,7 @@
   &__start {
     display: inline-block;
     margin-right: 0.5rem;
+    margin-left: 0.5rem;
   }
 
   &__end {

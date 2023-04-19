@@ -61,11 +61,11 @@ function Works({ type, list }) {
           <li key={index} className="experience__work">
             <h4 className="experience__company">{company}</h4>
             <div className="experience__details">
-              <strong className="experience__jobTitle">{designation}</strong>
+              <em className="experience__jobTitle">{designation}</em>
               <div className="experience__duration">
-                <em className="experience__start">{duration.start}</em>
+                <small className="experience__start">{duration.start}</small>
                 <span>-</span>
-                <em className="experience__end">{duration.end}</em>
+                <small className="experience__end">{duration.end}</small>
               </div>
               <ul className="experience__responsibilities">
                 {responsibilities.map((responsibility, indexR) => (
