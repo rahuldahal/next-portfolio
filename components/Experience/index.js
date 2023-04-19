@@ -15,36 +15,38 @@ export default function Experience() {
 
   return (
     <section className="experience">
-      <h2>Where I&apos;ve Worked</h2>
-      <div className="experience__contentWrap">
-        <div className="experience__type">
-          <Button
-            fill={type === 'fulltime' ? 'filled' : 'outline'}
-            type="button"
-            textContent="FullTime"
-            onClick={() => setType('fulltime')}
-          />
-          <Button
-            fill={type === 'hobby' ? 'filled' : 'outline'}
-            type="button"
-            textContent="Hobby/Part-Time"
-            onClick={() => setType('hobby')}
-          />
-          <div className="experience__list">
-            {type === 'fulltime' ? (
-              <Works type={type} list={fulltime} />
-            ) : (
-              <Works type={type} list={hobby} />
-            )}
+      <div className="contentsWrap">
+        <h2>Where I&apos;ve Worked</h2>
+        <div className="experience__contentWrap">
+          <div className="experience__type">
+            <Button
+              fill={type === 'fulltime' ? 'filled' : 'outline'}
+              type="button"
+              textContent="FullTime"
+              onClick={() => setType('fulltime')}
+            />
+            <Button
+              fill={type === 'hobby' ? 'filled' : 'outline'}
+              type="button"
+              textContent="Hobby/Part-Time"
+              onClick={() => setType('hobby')}
+            />
+            <div className="experience__list">
+              {type === 'fulltime' ? (
+                <Works type={type} list={fulltime} />
+              ) : (
+                <Works type={type} list={hobby} />
+              )}
+            </div>
           </div>
+          {widerThan1024 ? (
+            <img
+              src="/svgs/works.svg"
+              alt="Tasks completed in vector format"
+              className="experience__image"
+            />
+          ) : null}
         </div>
-        {widerThan1024 ? (
-          <img
-            src="/svgs/works.svg"
-            alt="Tasks completed in vector format"
-            className="experience__image"
-          />
-        ) : null}
       </div>
     </section>
   );
