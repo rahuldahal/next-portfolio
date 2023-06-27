@@ -1,0 +1,30 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --primary-clr-200: #0089cd;
+  --primary-clr-300: #0074ae;
+  --primary-clr-400: #006699;
+  --primary-clr-500: #005985;
+  --primary-clr-600: #014263;
+
+  --primary-RGB: 0, 102, 153;
+
+  --primary-gradient: var(--primary-clr-400) 0%, var(--primary-clr-300) 35%,
+    var(--primary-clr-200) 100%;
+
+  --primary-gradient-horizontal: linear-gradient(
+    90deg,
+    var(--primary-gradient)
+  );
+  --primary-gradient-horizontal-reverse: linear-gradient(
+    270deg,
+    var(--primary-gradient)
+  );
+  --primary-gradient-vertical: linear-gradient(180deg, var(--primary-gradient));
+  --primary-gradient-vertical-reverse: linear-gradient(
+    360deg,
+    var(--primary-gradient)
+  );
+}
