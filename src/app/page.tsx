@@ -1,4 +1,5 @@
 import Hero from '../components/Hero';
+import About from '../components/About';
 import Header from '../components/Header';
 
 export default function Index() {
@@ -6,6 +7,7 @@ export default function Index() {
     <>
       <Header />
       <Hero />
+      <About />
     </>
   );
 }

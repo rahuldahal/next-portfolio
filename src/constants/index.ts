@@ -20,3 +20,17 @@ export const navLinks: { text: string; path: string }[] = [
     path: '/contact',
   },
 ];
+
+export const expertiseList: string[] = [
+  'Core JavaScript',
+  'Node.js',
+  'React.js',
+  'Next.js',
+  'Microservices',
+  'Docker',
+  'MongoDB',
+  'PostgreSQL',
+  'Vue.js',
+  'Linux Kernel and Command Line',
+  'Basic DevOps',
+];
