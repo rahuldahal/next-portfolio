@@ -1,3 +1,4 @@
+import Experience from './Experience';
 import { expertiseList } from '../constants';
 import { Inter, Roboto } from '@next/font/google';
 
@@ -51,6 +52,7 @@ export default function About() {
           Download CV
         </a>
       </div>
+      <Experience />
     </section>
   );
 }
