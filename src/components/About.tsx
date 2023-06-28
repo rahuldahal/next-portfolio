@@ -1,6 +1,7 @@
 import Experience from './Experience';
 import { expertiseList } from '../constants';
 import { Inter, Roboto } from '@next/font/google';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 const roboto = Roboto({ weight: '300', subsets: ['latin'] });
@@ -11,11 +12,17 @@ export default function About() {
       className={`${roboto.className} flex sm:flex-row justify-center gap-8 my-8`}
     >
       <div className="flex flex-col items-center">
-        <img
-          src="https://picsum.photos/200" // TODO: update the picture
-          alt="Profile"
-          className="rounded-full h-48 w-48 object-cover"
-        />
+        <Link
+          href="https://res.cloudinary.com/rdaahal/image/upload/v1687931296/portfolio/rahul_rzlpol.jpg"
+          title="View full size image"
+          target="_blank"
+        >
+          <img
+            src="/images/rahul.jpg"
+            alt="Profile"
+            className="rounded-full h-48 w-48 object-cover"
+          />
+        </Link>
         <h1 className={`${inter.className} text-3xl font-bold my-2`}>
           Rahul Dahal
         </h1>
