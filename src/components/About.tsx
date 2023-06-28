@@ -23,11 +23,13 @@ export default function About() {
             className="rounded-full h-48 w-48 object-cover"
           />
         </Link>
-        <h1 className={`${inter.className} text-3xl font-bold my-2`}>
+        <h1
+          className={`${inter.className}text-gray-800 text-3xl font-bold my-2`}
+        >
           Rahul Dahal
         </h1>
         <p className="text-gray-600 mb-6">Software Engineer</p>
-        <p className="mb-4 max-w-xl text-center">
+        <p className="text-gray-700 mb-4 max-w-xl text-center">
           A self-motivated and passionate individual who discovered my love for
           web development in early 2018 through a YouTube video recommended by
           The New Boston channel. Bucky Roberts, the channel's instructor,
@@ -44,7 +46,7 @@ export default function About() {
             {expertiseList.map((expertise, index) => (
               <div
                 key={index}
-                className="bg-gray-100 text-gray-800 rounded-full px-4 py-2 m-1"
+                className="bg-gray-100 text-gray-700 rounded-full px-4 py-2 m-1"
               >
                 {expertise}
               </div>
