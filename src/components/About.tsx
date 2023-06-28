@@ -52,9 +52,9 @@ export default function About() {
           </div>
         </div>
         <a
-          href="/placeholder-cv.pdf"
-          className="bg-primary-400 hover:bg-primary-500 text-gray-100 font-bold py-2 px-4 my-6 rounded focus:outline-none focus:shadow-outline"
-          download
+          href="https://drive.google.com/file/d/1AOHKt3ZEkhZE_jPdHA7PFB2967Bz2hgS/view?usp=sharing"
+          className="bg-primary-400 hover:bg-primary-500 text-gray-100 py-2 px-4 my-6 rounded focus:outline-none focus:shadow-outline"
+          download="Rahul_Dahal_Resume.pdf"
         >
           Download CV
         </a>
