@@ -6,7 +6,7 @@ import Link from 'next/link';
 const inter = Inter({ subsets: ['latin'] });
 const roboto = Roboto({ weight: '300', subsets: ['latin'] });
 
-export default function About() {
+export default function Info() {
   return (
     <section
       className={`${roboto.className} flex sm:flex-row justify-center gap-8 my-8`}

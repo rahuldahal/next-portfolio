@@ -1,5 +1,5 @@
 import Hero from '../components/Hero';
-import About from '../components/About';
+import Info from '../components/Info';
 import Header from '../components/Header';
 
 export default function Index() {
@@ -7,7 +7,7 @@ export default function Index() {
     <>
       <Header activeNav="index" />
       <Hero />
-      <About />
+      <Info />
     </>
   );
 }
