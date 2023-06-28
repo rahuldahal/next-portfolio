@@ -6,7 +6,11 @@ import { Inter } from '@next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Header() {
+interface props {
+  activeNav: string;
+}
+
+export default function Header({ activeNav }: props): JSX.Element {
   return (
     <header className="bg-primary-400 fixed top-0 left-0 z-20 shadow-lg py-4 w-full">
       <div className="container mx-auto px-4">
@@ -27,7 +31,7 @@ export default function Header() {
               />
             </svg>
           </Link>
-          <Nav />
+          <Nav active={activeNav} />
         </div>
       </div>
     </header>

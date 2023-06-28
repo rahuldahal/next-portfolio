@@ -3,10 +3,15 @@
 import Link from 'next/link';
 import { navLinks } from '../constants';
 import { Roboto } from '@next/font/google';
+import classNames from 'classnames';
 
 const roboto = Roboto({ weight: '300', subsets: ['latin'] });
 
-export default function Nav(): JSX.Element {
+interface props {
+  active: string;
+}
+
+export default function Nav({ active }: props): JSX.Element {
   return (
     <nav className={roboto.className}>
       <div className="flex items-center justify-between">
@@ -18,7 +23,13 @@ export default function Nav(): JSX.Element {
                 <Link
                   key={index}
                   href={path}
-                  className="text-gray-200 transition duration-300 ease-in-out hover:bg-primary-600 hover:text-gray-100 px-3 py-2 rounded-md text-xl sm:text-l"
+                  className={classNames(
+                    'text-gray-200 transition duration-300 ease-in-out hover:bg-primary-600 hover:text-gray-100 px-3 py-2 rounded-md text-xl sm:text-l',
+                    {
+                      'bg-primary-600 text-gray-100':
+                        active === text.toLowerCase(),
+                    }
+                  )}
                 >
                   {text}
                 </Link>
