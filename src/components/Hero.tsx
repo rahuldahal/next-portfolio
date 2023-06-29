@@ -20,7 +20,11 @@ export default function Hero() {
           <p
             className={`${roboto.className} text-xl md:text-2xl font-semibold`}
           >
-            Software Engineer
+            I write{' '}
+            <span className="px-4 py-2 bg-yellow-400 text-gray-800 rounded-lg">
+              JavaScript
+            </span>{' '}
+            to build software applications.
           </p>
         </div>
       </div>
