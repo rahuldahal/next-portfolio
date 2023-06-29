@@ -11,3 +11,7 @@ export function sortCompanies(companies: workDetail[]): workDetail[] {
     return new Date(startDateB).getTime() - new Date(startDateA).getTime();
   });
 }
+
+export function match(string: string, regex: RegExp): boolean {
+  return regex.test(string);
+}
