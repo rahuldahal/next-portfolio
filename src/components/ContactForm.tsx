@@ -21,7 +21,7 @@ export default function Form(): JSX.Element {
   });
 
   const commonInputStyles =
-    'w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary-400';
+    'w-full px-4 py-2 bg-gray-200 border border-gray-200 rounded focus:outline-none focus:border-primary-400';
 
   useEffect(() => {
     if (!validated) {
@@ -74,7 +74,12 @@ export default function Form(): JSX.Element {
   }
 
   return (
-    <section className={classNames(roboto.className, 'pt-40')}>
+    <section
+      className={classNames(
+        roboto.className,
+        'pt-40 min-h-screen relative bg-gray-100'
+      )}
+    >
       <h1
         className={classNames(
           inter.className,
@@ -86,67 +91,72 @@ export default function Form(): JSX.Element {
       <small className="block text-center">
         I'll get back to you as soon as possible.
       </small>
-      <form className="max-w-md mx-auto mt-4" onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="email" className="block mb-1">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            className={classNames(commonInputStyles, {
-              'border-red-500': errors.email,
-            })}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm">{errors.email}</p>
-          )}
-        </div>
-
-        <div className="mb-4">
-          <label htmlFor="fullName" className="block mb-1">
-            Full Name
-          </label>
-          <input
-            type="text"
-            id="fullName"
-            className={classNames(commonInputStyles, {
-              'border-red-500': errors.fullName,
-            })}
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-          />
-          {errors.fullName && (
-            <p className="text-red-500 text-sm">{errors.fullName}</p>
-          )}
-        </div>
-
-        <div className="mb-4">
-          <label htmlFor="message" className="block mb-1">
-            Message
-          </label>
-          <textarea
-            id="message"
-            className={classNames(commonInputStyles, {
-              'border-red-500': errors.message,
-            })}
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-          {errors.message && (
-            <p className="text-red-500 text-sm">{errors.message}</p>
-          )}
-        </div>
-
-        <button
-          type="submit"
-          className="w-full py-2 px-4 bg-primary-400 text-gray-100 rounded hover:bg-primary-500"
+      <div className="bg-primary-600 absolute w-full h-2/5 bottom-0 left-0">
+        <form
+          className="max-w-md mt-4 w-full bg-gray-100 p-4 absolute -top-24 left-1/2 -translate-x-1/2 rounded-lg shadow-lg md:-top-36 md:w-2/3"
+          onSubmit={handleSubmit}
         >
-          Send
-        </button>
-      </form>
+          <div className="mb-4">
+            <label htmlFor="email" className="block mb-1 text-gray-700">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              className={classNames(commonInputStyles, {
+                'border-red-500': errors.email,
+              })}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email}</p>
+            )}
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="fullName" className="block mb-1 text-gray-700">
+              Full Name
+            </label>
+            <input
+              type="text"
+              id="fullName"
+              className={classNames(commonInputStyles, {
+                'border-red-500': errors.fullName,
+              })}
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+            />
+            {errors.fullName && (
+              <p className="text-red-500 text-sm">{errors.fullName}</p>
+            )}
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="message" className="block mb-1 text-gray-700">
+              Message
+            </label>
+            <textarea
+              id="message"
+              className={classNames(commonInputStyles, {
+                'border-red-500': errors.message,
+              })}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+            {errors.message && (
+              <p className="text-red-500 text-sm">{errors.message}</p>
+            )}
+          </div>
+
+          <button
+            type="submit"
+            className="w-full py-2 px-4 bg-primary-400 text-gray-100 rounded hover:bg-primary-500"
+          >
+            Send
+          </button>
+        </form>
+      </div>
     </section>
   );
 }
