@@ -1,15 +1,20 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import classNames from 'classnames';
 import Experience from './Experience';
 import { expertiseList } from '../constants';
 import { Inter, Roboto } from '@next/font/google';
-import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
-const roboto = Roboto({ weight: '300', subsets: ['latin'] });
+const roboto = Roboto({ weight: '400', subsets: ['latin'] });
 
 export default function Info() {
   return (
     <section
-      className={`${roboto.className} flex sm:flex-row justify-center gap-8 my-8`}
+      className={classNames(
+        roboto.className,
+        'flex flex-col sm:flex-row justify-center gap-8 my-8'
+      )}
     >
       <div className="flex flex-col items-center">
         <Link
@@ -17,14 +22,21 @@ export default function Info() {
           title="View full size image"
           target="_blank"
         >
-          <img
-            src="/images/rahul.jpg"
-            alt="Profile"
-            className="rounded-full h-48 w-48 object-cover"
-          />
+          <div className="w-48 h-48">
+            <Image
+              src="/images/rahul.jpg"
+              alt="Profile"
+              className="rounded-full object-cover"
+              width={192}
+              height={192}
+            />
+          </div>
         </Link>
         <h1
-          className={`${inter.className}text-gray-800 text-3xl font-bold my-2`}
+          className={classNames(
+            inter.className,
+            'text-gray-800 text-3xl font-bold my-2'
+          )}
         >
           Rahul Dahal
         </h1>
@@ -38,7 +50,10 @@ export default function Info() {
         </p>
         <div className="p-4 max-w-xl rounded bg-primary-500 my-4">
           <h3
-            className={`${inter.className} text-xl font-bold mb-2 text-gray-100`}
+            className={classNames(
+              inter.className,
+              'text-xl font-bold mb-2 text-gray-100'
+            )}
           >
             Area of Expertise
           </h3>
