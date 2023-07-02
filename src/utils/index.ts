@@ -15,3 +15,7 @@ export function sortCompanies(companies: workDetail[]): workDetail[] {
 export function match(string: string, regex: RegExp): boolean {
   return regex.test(string);
 }
+
+export function truncate(string: string, limit: number = 0) {
+  return `${string.substring(0, limit)}...`;
+}
