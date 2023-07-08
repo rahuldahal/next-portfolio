@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import classNames from 'classnames';
 import { Inter, Roboto } from '@next/font/google';
 
@@ -11,8 +12,8 @@ export default function GeneralInfo(): JSX.Element {
       id="about"
       className={classNames('m-auto px-4 py-40', roboto.className)}
     >
-      <div className="flex flex-col-reverse md:flex-row-reverse justify-center items-center">
-        <div className="max-w-md mx-auto md:ml-8 md:mr-4 md:max-w-lg p-6 bg-primary-400 text-gray-200 rounded shadow-md">
+      <div className="flex flex-col-reverse gap-4 md:flex-row-reverse justify-center items-center max-w-4xl mx-auto">
+        <div className="max-w-md mx-auto md:max-w-lg p-6 bg-primary-400 text-gray-200 rounded shadow-md">
           <h2
             className={classNames(
               'text-3xl text-gray-100 font-bold mb-4',
@@ -51,10 +52,12 @@ export default function GeneralInfo(): JSX.Element {
           title="View full-size image"
           target="_blank"
         >
-          <img
+          <Image
             src="/images/rahul.jpg"
             alt="Profile"
             className="rounded-full h-72 w-72 object-cover"
+            width={288}
+            height={288}
           />
         </Link>
       </div>

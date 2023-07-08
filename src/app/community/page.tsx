@@ -5,7 +5,7 @@ const CommunityPage = () => {
   return (
     <>
       <Header activeNav="community" />
-      <div className="pt-40 flex flex-col items-center justify-center h-screen bg-primary-600">
+      <div className="pt-40 flex flex-col items-center justify-center h-screen bg-primary-600 text-center">
         <h1 className="text-4xl text-gray-200 font-bold mb-4">Coming Soon!</h1>
         <p className="text-lg text-gray-300 mb-8">
           This page is currently being built and will be published soon.
