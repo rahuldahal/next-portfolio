@@ -13,7 +13,7 @@ export default function Info() {
     <section
       className={classNames(
         roboto.className,
-        'flex flex-col sm:flex-row justify-center gap-8 my-8'
+        'flex flex-col sm:flex-row justify-center gap-8 my-8 px-4'
       )}
     >
       <div className="flex flex-col items-center">

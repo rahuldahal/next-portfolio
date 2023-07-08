@@ -77,7 +77,7 @@ export default function Form(): JSX.Element {
     <section
       className={classNames(
         roboto.className,
-        'pt-40 min-h-screen relative bg-gray-100'
+        'pt-40 px-4 min-h-screen relative bg-gray-100'
       )}
     >
       <h1

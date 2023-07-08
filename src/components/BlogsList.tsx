@@ -5,7 +5,7 @@ import { truncate } from '../utils';
 
 export default function BlogsList({ blogsList }): JSX.Element {
   return (
-    <section className="container mx-auto p-4 sm:p-10 md:p-16 md:pt-40">
+    <section className="container mx-auto px-4 sm:p-10 md:p-16 pt-40">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {blogsList.map((item) => {
           const { _id, slug, title, brief, coverImage, dateAdded } = item;
