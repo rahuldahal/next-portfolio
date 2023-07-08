@@ -61,3 +61,26 @@ export const professionalBackgrounds: workDetail[] = [
     ],
   },
 ];
+
+export const markdownOptions = {
+  overrides: {
+    pre: {
+      component: 'pre',
+      props: {
+        className: 'rounded-lg',
+      },
+    },
+    code: {
+      component: 'code',
+      props: {
+        className: 'language-javascript text-base',
+      },
+    },
+    li: {
+      component: 'li',
+      props: {
+        className: 'list-disc',
+      },
+    },
+  },
+};

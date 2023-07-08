@@ -43,3 +43,129 @@
   height: 100%;
   background-color: rgba(var(--primary-RGB), 0.9);
 }
+
+/* CSS file for blog article */
+
+/* General styles */
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  margin: 0;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content p {
+  margin: 0 0 1em;
+}
+
+.markdown-content a {
+  color: var(--primary-clr-400);
+  text-decoration: none;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Heading styles */
+.markdown-content h1 {
+  font-size: 2rem;
+}
+
+.markdown-content h2 {
+  font-size: 1.5rem;
+}
+
+.markdown-content h3 {
+  font-size: 1.25rem;
+}
+
+/* Paragraph styles */
+.markdown-content p {
+  font-size: 1rem;
+}
+
+/* List styles */
+.markdown-content ul,
+.markdown-content ol {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+
+.markdown-content li {
+  margin-bottom: 0.5em;
+}
+
+/* Blockquote styles */
+.markdown-content blockquote {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  background-color: #f8f8f8;
+  border-left: 4px solid #007bff;
+}
+
+/* Code block styles */
+.markdown-content pre {
+  padding: 1em;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  overflow-x: auto;
+  font-family: Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+/* Link styles */
+.markdown-content a {
+  transition: color 0.3s;
+}
+
+.markdown-content a:hover {
+  color: #0056b3;
+}
+
+/* Image caption styles */
+.markdown-content figcaption {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .markdown-content .container {
+    padding: 10px;
+  }
+
+  .markdown-content h1 {
+    font-size: 2rem;
+  }
+
+  .markdown-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .markdown-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .markdown-content p {
+    font-size: 0.9rem;
+  }
+
+  .markdown-content blockquote {
+    margin: 0.8em 0;
+  }
+
+  .markdown-content pre {
+    font-size: 0.8rem;
+  }
+
+  .markdown-content figcaption {
+    font-size: 0.8rem;
+  }
+}
