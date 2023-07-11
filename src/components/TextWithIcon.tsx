@@ -3,7 +3,7 @@ import Icon from './Icon';
 
 interface props {
   label: string;
-  iconPathData: string;
+  iconPathData: string | string[];
   iconOnLeft?: boolean;
 }
 
