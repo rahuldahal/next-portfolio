@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { truncate } from '../utils';
+import TextWithIcon from './TextWithIcon';
+import { iconPaths } from '../constants/iconPaths';
 
 export default function BlogsList({ blogsList }): JSX.Element {
   return (
@@ -24,7 +26,11 @@ export default function BlogsList({ blogsList }): JSX.Element {
                     href={url}
                     className="absolute top-2 right-2 px-4 py-2 text-gray-800 bg-yellow-400 rounded-lg"
                   >
-                    {new Date(dateAdded).toDateString()}
+                    <TextWithIcon
+                      label={new Date(dateAdded).toDateString()}
+                      iconPathData={iconPaths.calendar}
+                      iconOnLeft={true}
+                    />
                   </Link>
                 </Link>
               </div>
@@ -36,7 +42,13 @@ export default function BlogsList({ blogsList }): JSX.Element {
                 </Link>
                 <p className="mt-2 text-gray-500">{truncate(brief, 120)}</p>
                 <div className="flex items-center mt-4">
-                  <span className="text-sm text-gray-900">3 mins</span>
+                  <span className="text-sm text-gray-900">
+                    <TextWithIcon
+                      label="3 mins"
+                      iconPathData={iconPaths.clock}
+                      iconOnLeft={true}
+                    />
+                  </span>
                   {/* TODO: make the read time dynamic */}
                 </div>
               </div>

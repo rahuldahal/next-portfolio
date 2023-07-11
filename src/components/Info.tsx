@@ -2,8 +2,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import classNames from 'classnames';
 import Experience from './Experience';
+import TextWithIcon from './TextWithIcon';
 import { expertiseList } from '../constants';
 import { Inter, Roboto } from '@next/font/google';
+import { iconPaths } from '../constants/iconPaths';
 
 const inter = Inter({ subsets: ['latin'] });
 const roboto = Roboto({ weight: '400', subsets: ['latin'] });
@@ -73,7 +75,7 @@ export default function Info() {
           className="bg-primary-400 hover:bg-primary-500 text-gray-100 py-2 px-4 my-6 rounded focus:outline-none focus:shadow-outline"
           download="Rahul_Dahal_Resume.pdf"
         >
-          Download CV
+          <TextWithIcon label="Download CV" iconPathData={iconPaths.download} />
         </a>
       </div>
       <Experience />

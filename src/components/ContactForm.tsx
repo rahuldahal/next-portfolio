@@ -1,7 +1,9 @@
 import { match } from '../utils';
 import classNames from 'classnames';
+import TextWithIcon from './TextWithIcon';
 import { useEffect, useState } from 'react';
 import { Inter, Roboto } from '@next/font/google';
+import { iconPaths } from '../constants/iconPaths';
 import { errorMessages, regex } from '../constants/validation';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -153,7 +155,7 @@ export default function Form(): JSX.Element {
             type="submit"
             className="w-full py-2 px-4 bg-primary-400 text-gray-100 rounded hover:bg-primary-500"
           >
-            Send
+            <TextWithIcon label="Send" iconPathData={iconPaths.send} />
           </button>
         </form>
       </div>
