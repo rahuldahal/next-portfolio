@@ -46,7 +46,7 @@ export default function Info() {
         <p className="text-gray-700 mb-4 max-w-xl text-center">
           A self-motivated and passionate individual who discovered my love for
           web development in early 2018 through a YouTube video recommended by
-          The New Boston channel. Bucky Roberts, the channel's instructor,
+          The New Boston channel. Bucky Roberts, the channel&apos;s instructor,
           introduced me to the fundamentals of web development, which sparked my
           interest in learning more.
         </p>

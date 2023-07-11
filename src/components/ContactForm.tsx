@@ -91,7 +91,7 @@ export default function Form(): JSX.Element {
         Send me a Direct Message
       </h1>
       <small className="block text-center">
-        I'll get back to you as soon as possible.
+        I&apos;ll get back to you as soon as possible.
       </small>
       <div className="bg-primary-600 absolute w-full h-2/5 bottom-0 left-0">
         <form

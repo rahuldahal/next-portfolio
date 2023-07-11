@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { truncate } from '../utils';
 import TextWithIcon from './TextWithIcon';
 import { iconPaths } from '../constants/iconPaths';
+import Image from 'next/image';
 
 export default function BlogsList({ blogsList }): JSX.Element {
   return (
@@ -16,10 +17,12 @@ export default function BlogsList({ blogsList }): JSX.Element {
             <div key={_id} className="flex flex-col">
               <div className="relative h-52 sm:h-64 md:h-72">
                 <Link href={url}>
-                  <img
+                  <Image
                     className="object-cover w-full h-full rounded-lg"
                     src={coverImage}
                     alt={title}
+                    width={768}
+                    height={208}
                   />
                   <div className="absolute inset-0 bg-gray-800 opacity-25 transition duration-300 hover:bg-transparent rounded-lg"></div>
                   <Link

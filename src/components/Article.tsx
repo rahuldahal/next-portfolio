@@ -76,7 +76,7 @@ export default function Article({ article }) {
           ))}
         </div>
         <Markdown
-          options={markdownOptions}
+          overrides={markdownOptions}
           className="md:bg-gray-100 text-gray-700 w-full md:max-w-4xl mt-4 md:px-4 py-4 rounded-lg markdown-content"
         >
           {contentMarkdown}

@@ -1,7 +1,7 @@
 import Header from '../../../components/Header';
 import Article from '../../../components/Article';
 
-export async function getArticle(slug: string) {
+async function getArticle(slug: string) {
   const query = `
       {
           post(slug:"${slug}", hostname: "rdaahal.hashnode.dev"){
