@@ -79,13 +79,13 @@ export default function Form(): JSX.Element {
     <section
       className={classNames(
         roboto.className,
-        'pt-40 px-4 min-h-screen relative bg-gray-100'
+        'pt-28 px-4 md:pt-40 min-h-screen relative bg-gray-100'
       )}
     >
       <h1
         className={classNames(
           inter.className,
-          'text-center text-3xl font-bold'
+          'text-center text-xl md:text-3xl font-bold'
         )}
       >
         Send me a Direct Message
@@ -95,7 +95,7 @@ export default function Form(): JSX.Element {
       </small>
       <div className="bg-primary-600 absolute w-full h-2/5 bottom-0 left-0">
         <form
-          className="max-w-md mt-4 w-11/12 bg-gray-100 p-4 absolute -top-24 left-1/2 -translate-x-1/2 rounded-lg shadow-lg md:-top-36 md:w-2/3"
+          className="max-w-md mt-4 w-11/12 bg-gray-100 p-4 absolute -top-60 left-1/2 -translate-x-1/2 rounded-lg shadow-lg md:-top-36 md:w-2/3"
           onSubmit={handleSubmit}
         >
           <div className="mb-4">
