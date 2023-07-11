@@ -7,7 +7,7 @@ import { iconPaths } from '../constants/iconPaths';
 
 export default function BlogsList({ blogsList }): JSX.Element {
   return (
-    <section className="container mx-auto px-4 pt-40 pb-10">
+    <section className="container mx-auto px-4 pt-40 pb-20 md:pb-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {blogsList.map((item) => {
           const { _id, slug, title, brief, coverImage, dateAdded } = item;

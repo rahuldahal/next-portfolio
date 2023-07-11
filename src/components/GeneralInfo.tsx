@@ -10,7 +10,7 @@ export default function GeneralInfo(): JSX.Element {
   return (
     <section
       id="about"
-      className={classNames('m-auto px-4 py-40', roboto.className)}
+      className={classNames('m-auto px-4 pt-40 pb-20', roboto.className)}
     >
       <div className="flex flex-col-reverse gap-4 md:flex-row-reverse justify-center items-center max-w-4xl mx-auto">
         <div className="max-w-md mx-auto md:max-w-lg p-6 bg-primary-400 text-gray-200 rounded shadow-md">

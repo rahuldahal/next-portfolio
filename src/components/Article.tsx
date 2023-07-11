@@ -35,7 +35,7 @@ export default function Article({ article }) {
     <article
       className={classNames(
         roboto.className,
-        'container mx-auto px-4 pt-40 pb-8'
+        'container mx-auto px-4 pt-40 pb-20 md:pb-8'
       )}
     >
       <div className="md:max-w-3xl mx-auto">

@@ -9,7 +9,7 @@ const roboto = Roboto({ weight: '400', subsets: ['latin'] });
 
 export default function Experience(): JSX.Element {
   return (
-    <div className={`${roboto.className} max-w-2xl`}>
+    <div className={`${roboto.className} max-w-2xl pb-20`}>
       <h3
         className={`${inter.className} text-gray-800 text-3xl font-bold text-center`}
       >
