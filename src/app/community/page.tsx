@@ -12,8 +12,8 @@ const CommunityPage = () => {
         </p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           viewBox="0 0 100 125"
           className="fill-gray-300 w-64 h-auto"
         >
