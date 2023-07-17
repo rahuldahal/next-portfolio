@@ -5,9 +5,11 @@ import Image from 'next/image';
 import classNames from 'classnames';
 import Markdown from 'markdown-to-jsx';
 import React, { useEffect } from 'react';
+import TextWithIcon from './TextWithIcon';
 import 'prismjs/components/prism-javascript';
 import { markdownOptions } from '../constants';
 import { Inter, Roboto } from '@next/font/google';
+import { iconPaths } from '../constants/iconPaths';
 import 'prism-themes/themes/prism-one-dark.min.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -30,6 +32,19 @@ export default function Article({ article }) {
   const lastUpdated = dateUpdated
     ? new Date(dateUpdated).toDateString()
     : datePublished;
+
+  function handleShare() {
+    const data = {
+      title,
+      url: location.href,
+    };
+
+    if (navigator.canShare && navigator.canShare(data)) {
+      navigator.share(data);
+    } else {
+      alert("Doesn't yet support the Share feature.");
+    }
+  }
 
   return (
     <article
@@ -81,6 +96,14 @@ export default function Article({ article }) {
         >
           {contentMarkdown}
         </Markdown>
+
+        <button
+          type="button"
+          onClick={handleShare}
+          className="bg-primary-400 hover:bg-primary-500 mx-auto text-gray-100 text-lg py-2 px-4 my-6 rounded focus:outline-none focus:shadow-outline"
+        >
+          <TextWithIcon label="Share" iconPathData={iconPaths.share} />
+        </button>
       </div>
     </article>
   );
