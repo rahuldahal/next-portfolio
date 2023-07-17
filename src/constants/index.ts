@@ -84,3 +84,5 @@ export const markdownOptions = {
     },
   },
 };
+
+export const hCAPTCHA_SITE_KEY = '98158277-e2ec-4215-b2df-7e65e9eb8ad7';

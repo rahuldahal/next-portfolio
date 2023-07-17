@@ -169,3 +169,8 @@
     font-size: 0.8rem;
   }
 }
+
+[data-hcaptcha-widget-id] {
+  margin: auto;
+  margin-bottom: 1rem;
+}
