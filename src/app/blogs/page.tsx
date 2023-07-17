@@ -33,6 +33,7 @@ async function getBlogs() {
         query,
         variables: {},
       }),
+      cache: 'no-store',
     });
     const { data } = await res.json();
     return data.user.publication.posts as any[];

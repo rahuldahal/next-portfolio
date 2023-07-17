@@ -34,6 +34,7 @@ async function getArticle(slug: string) {
         query,
         variables: {},
       }),
+      cache: 'no-store',
     });
     const { data } = await res.json();
     if (!data) {
