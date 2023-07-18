@@ -1,7 +1,14 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect } from 'react';
 import Header from '../../components/Header';
+import { handleLoader } from '../../utils/loader';
 
 const CommunityPage = () => {
+  useEffect(() => {
+    handleLoader({ show: false });
+  }, []);
+
   return (
     <>
       <Header activeNav="community" />

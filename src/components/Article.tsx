@@ -7,6 +7,7 @@ import Markdown from 'markdown-to-jsx';
 import React, { useEffect } from 'react';
 import TextWithIcon from './TextWithIcon';
 import 'prismjs/components/prism-javascript';
+import { handleLoader } from '../utils/loader';
 import { markdownOptions } from '../constants';
 import { Inter, Roboto } from '@next/font/google';
 import { iconPaths } from '../constants/iconPaths';
@@ -21,6 +22,7 @@ export default function Article({ article }) {
 
   useEffect(() => {
     Prism.highlightAll();
+    handleLoader({ show: false });
   }, []);
 
   function minutesToRead() {

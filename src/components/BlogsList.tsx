@@ -1,12 +1,22 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
+import { useEffect } from 'react';
 import { truncate } from '../utils';
 import TextWithIcon from './TextWithIcon';
+import { handleLoader } from '../utils/loader';
 import { iconPaths } from '../constants/iconPaths';
-import Image from 'next/image';
 
 export default function BlogsList({ blogsList }): JSX.Element {
+  useEffect(() => {
+    handleLoader({ show: false });
+  }, []);
+
+  function showLoader() {
+    handleLoader({ show: true });
+  }
+
   return (
     <section className="container mx-auto px-4 pt-40 pb-20 md:pb-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -16,7 +26,7 @@ export default function BlogsList({ blogsList }): JSX.Element {
           return (
             <div key={_id} className="flex flex-col">
               <div className="relative h-52 sm:h-64 md:h-72">
-                <Link href={url}>
+                <Link href={url} onClick={showLoader}>
                   <Image
                     className="object-cover w-full h-full rounded-lg"
                     src={coverImage}
@@ -38,7 +48,7 @@ export default function BlogsList({ blogsList }): JSX.Element {
                 </Link>
               </div>
               <div className="flex flex-col flex-grow px-4 py-4 bg-white rounded-lg shadow-lg">
-                <Link href={url}>
+                <Link href={url} onClick={showLoader}>
                   <h2 className="text-lg font-semibold text-primary-500 hover:text-primary-700 transition duration-500 ease-in-out">
                     {title}
                   </h2>

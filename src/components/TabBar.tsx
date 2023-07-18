@@ -2,6 +2,7 @@ import Icon from './Icon';
 import Link from 'next/link';
 import classNames from 'classnames';
 import { navLinks } from '../constants';
+import { handleLoader } from '../utils/loader';
 import { iconPaths } from '../constants/iconPaths';
 
 export default function TabBar({ active }): JSX.Element {
@@ -20,6 +21,7 @@ export default function TabBar({ active }): JSX.Element {
                   'bg-primary-600 text-gray-100': active === text.toLowerCase(),
                 }
               )}
+              onClick={() => handleLoader({ show: true })}
             >
               <Icon
                 iconPathData={iconPaths[text.toLowerCase()]}

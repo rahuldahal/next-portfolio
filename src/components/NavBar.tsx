@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import classNames from 'classnames';
 import { navLinks } from '../constants';
+import { handleLoader } from '../utils/loader';
 
 export default function NavBar({ active }): JSX.Element {
   return (
@@ -20,6 +21,7 @@ export default function NavBar({ active }): JSX.Element {
                       active === text.toLowerCase(),
                   }
                 )}
+                onClick={() => handleLoader({ show: true })}
               >
                 {text}
               </Link>
