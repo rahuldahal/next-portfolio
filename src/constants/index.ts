@@ -1,3 +1,22 @@
+export const metaData = {
+  title: 'Rahul Dahal | Software Engineer | JavaScript Specialist',
+  description:
+    'Welcome to the portfolio website of a seasoned software engineer with expertise in JavaScript and its dynamic ecosystem. Explore a showcase of my finest work in JavaScript, Flutter, and related technologies. With a deep understanding of core JavaScript features, I have created efficient and reliable applications, staying up-to-date with industry standards. Mentoring aspiring developers is my passion, and they take pride in shaping the next generation of talented engineers. Connect with me to transform ideas into exceptional software solutions.',
+  authors: [{ url: 'https://github.com/rahuldahal', name: 'Rahul Dahal' }],
+  keywords: [
+    'software engineer',
+    'JavaScript specialist',
+    'web development',
+    'portfolio',
+    'experienced',
+    'mentoring',
+    'reliable applications',
+    'industry standards',
+    'talented engineer',
+    'exceptional software solutions',
+  ],
+};
+
 export const navLinks: { text: string; path: string }[] = [
   {
     text: 'About',

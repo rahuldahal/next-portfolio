@@ -1,8 +1,14 @@
 import './globals.css';
+import { Metadata } from 'next';
+import { metaData } from '../constants';
 
-export const metadata = {
-  title: 'Rahul Dahal | Software Engineer',
-  description: '',
+const { title, description, authors, keywords } = metaData;
+
+export const metadata: Metadata = {
+  title,
+  description,
+  authors,
+  keywords,
 };
 
 export default function RootLayout({
