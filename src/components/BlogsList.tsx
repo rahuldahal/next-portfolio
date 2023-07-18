@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect } from 'react';
-import { truncate } from '../utils';
 import TextWithIcon from './TextWithIcon';
 import { handleLoader } from '../utils/loader';
+import { formatDate, truncate } from '../utils';
 import { iconPaths } from '../constants/iconPaths';
 
 export default function BlogsList({ blogsList }): JSX.Element {
@@ -40,7 +40,7 @@ export default function BlogsList({ blogsList }): JSX.Element {
                     className="absolute top-2 right-2 px-4 py-2 text-gray-800 bg-yellow-400 rounded-lg"
                   >
                     <TextWithIcon
-                      label={new Date(dateAdded).toDateString()}
+                      label={formatDate(dateAdded)}
                       iconPathData={iconPaths.calendar}
                       iconOnLeft={true}
                     />

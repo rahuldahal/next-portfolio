@@ -12,6 +12,7 @@ import { markdownOptions } from '../constants';
 import { Inter, Roboto } from '@next/font/google';
 import { iconPaths } from '../constants/iconPaths';
 import 'prism-themes/themes/prism-one-dark.min.css';
+import { formatDate } from '../utils';
 
 const inter = Inter({ subsets: ['latin'] });
 const roboto = Roboto({ weight: '400', subsets: ['latin'] });
@@ -30,10 +31,8 @@ export default function Article({ article }) {
     return Math.floor(words / 150) || 1;
   }
 
-  const datePublished = new Date(dateAdded).toDateString();
-  const lastUpdated = dateUpdated
-    ? new Date(dateUpdated).toDateString()
-    : datePublished;
+  const datePublished = formatDate(dateAdded);
+  const lastUpdated = dateUpdated ? formatDate(dateUpdated) : datePublished;
 
   function handleShare() {
     const data = {

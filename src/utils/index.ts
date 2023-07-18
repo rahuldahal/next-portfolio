@@ -19,3 +19,30 @@ export function match(string: string, regex: RegExp): boolean {
 export function truncate(string: string, limit: number = 0) {
   return `${string.substring(0, limit)}...`;
 }
+
+export function formatDate(date: Date): string {
+  const months: string[] = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+
+  const dateObject = new Date(date);
+
+  const month = months[dateObject.getMonth()];
+  const day = dateObject.getDate();
+  const year = dateObject.getFullYear();
+
+  const formattedDate = `${month} ${day}, ${year}`;
+
+  return formattedDate;
+}
