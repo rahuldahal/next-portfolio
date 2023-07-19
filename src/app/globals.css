@@ -233,14 +233,12 @@ header::after {
 }
 
 .closeVideo {
-  opacity: 1;
-  animation: fade-in 0.3s 2s ease-in-out;
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out forwards;
+  animation-delay: 2s;
 }
 
 @keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
   100% {
     opacity: 1;
   }
