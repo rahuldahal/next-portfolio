@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import classNames from 'classnames';
-import Experience from './Experience';
-import TextWithIcon from './TextWithIcon';
 import { expertiseList } from '../constants';
 import { Inter, Roboto } from '@next/font/google';
+import WorkExperienceCarousel from './WorkExperienceCarousel';
+import TextWithIcon from './TextWithIcon';
 import { iconPaths } from '../constants/iconPaths';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -15,7 +15,7 @@ export default function Info() {
     <section
       className={classNames(
         roboto.className,
-        'flex flex-col sm:flex-row justify-center gap-8 my-8 px-4'
+        'container flex flex-col sm:flex-row justify-center items-start gap-8 my-8 mx-auto px-4 pb-12 md:pb-0'
       )}
     >
       <div className="flex flex-col items-center">
@@ -70,15 +70,18 @@ export default function Info() {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="grow">
+        <WorkExperienceCarousel />
         <a
           href="https://bit.ly/resume_rahul_dahal"
-          className="bg-primary-400 hover:bg-primary-500 text-gray-100 py-2 px-4 my-6 rounded focus:outline-none focus:shadow-outline"
+          className="block max-w-max bg-primary-400 hover:bg-primary-500 text-gray-100 py-2 px-4 my-6 mx-auto rounded focus:outline-none focus:shadow-outline"
           download="Rahul_Dahal_Resume.pdf"
         >
           <TextWithIcon label="Download CV" iconPathData={iconPaths.download} />
         </a>
       </div>
-      <Experience />
     </section>
   );
 }
