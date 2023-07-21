@@ -146,15 +146,36 @@ header::after {
 }
 
 /* List styles */
+/* Reset default list styles */
 .markdown-content ul,
 .markdown-content ol {
   margin: 0;
   padding: 0;
+}
+
+/* Style for ordered list (decimal numbers) */
+.markdown-content ol {
+  list-style: decimal;
   list-style-position: inside;
 }
 
-.markdown-content li {
-  margin-bottom: 0.5em;
+.markdown-content ol > li {
+  margin-bottom: 1rem;
+}
+
+/* Style for unordered list (disc) */
+.markdown-content ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+
+/* Style for nested lists */
+.markdown-content ul ul,
+.markdown-content ol ul,
+.markdown-content ul ol,
+.markdown-content ol ol {
+  margin-top: 0.5em; /* Adjust the spacing between nested lists */
+  margin-left: 2em; /* Increased the indentation to 2em for nested lists */
 }
 
 /* Blockquote styles */
