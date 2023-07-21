@@ -19,8 +19,6 @@ export async function POST(req: Request) {
 
   const data = await hResponse.json();
 
-  console.log(data);
-
   if (data.success) {
     const message = JSON.stringify({ success: true });
     return new Response(message, {
