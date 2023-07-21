@@ -1,18 +1,17 @@
 'use client';
 
-import { useEffect } from 'react';
+import Video from '../../components/Video';
 import Header from '../../components/Header';
-import { handleLoader } from '../../utils/loader';
-import GeneralInfo from '../../components/GeneralInfo';
+import Hobbies from '../../components/Hobbies';
 
 export default function About(): JSX.Element {
-  useEffect(() => {
-    handleLoader({ show: false });
-  }, []);
   return (
     <>
       <Header activeNav="about" />
-      <GeneralInfo />
+      <main className="container mx-auto pt-40">
+        <Video />
+        <Hobbies />
+      </main>
     </>
   );
 }

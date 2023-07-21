@@ -104,6 +104,38 @@ export const markdownOptions = {
   },
 };
 
+interface hobby {
+  activity: string;
+  description: string;
+}
+export const hobbies: hobby[] = [
+  {
+    activity: 'Reading',
+    description:
+      'I enjoy reading self-help and productivity books that inspire me to become a better version of myself and lead a more fulfilling life.',
+  },
+  {
+    activity: 'Music',
+    description:
+      "Music is my passion, and I love exploring music theory to understand melody, rhythm, and harmony, which allows me to express myself creatively. I'm also learning to play basic guitar chords, adding another dimension to my musical journey.",
+  },
+  {
+    activity: 'Songwriting',
+    description:
+      'One of my favorite ways to express my emotions and thoughts is through songwriting. I find comfort in crafting heartfelt lyrics that resonate with others. Singing these words brings a sense of freedom and connection to the world around me.',
+  },
+  {
+    activity: 'Dancing',
+    description:
+      "When the music starts playing, I can't resist moving my body. I've been practicing basic hip-hop and lyrical dance styles, combining the energy of hip-hop with the elegance of lyrical movements. Dancing allows me to express my creativity and emotions physically.",
+  },
+  {
+    activity: 'FIFA',
+    description:
+      "EA Sports FIFA is my favorite game when I want to immerse myself in the world of football. I spend hours strategizing, competing against friends or the computer, and experiencing the joy of victory and the lessons of defeat. It's an exciting virtual football journey that keeps me hooked.",
+  },
+];
+
 export const hCAPTCHA_SITE_KEY = '98158277-e2ec-4215-b2df-7e65e9eb8ad7';
 export const VIDEO_PORTFOLIO_EMBEDD_LINK =
   'https://www.youtube.com/embed/OyJrwRGzCSY';
