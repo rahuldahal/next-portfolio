@@ -23,6 +23,7 @@
     "autoprefixer": "^10.4.14",
     "classnames": "^2.3.2",
     "markdown-to-jsx": "^7.2.1",
+    "nanoid": "^4.0.2",
     "next": "^13.4.4",
     "postcss": "^8.4.24",
     "prism-themes": "^1.9.0",

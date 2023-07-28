@@ -1,25 +1,25 @@
-import Link from 'next/link';
 import { match } from '../utils';
 import classNames from 'classnames';
+import { nanoid } from 'nanoid/async';
 import InputField from './InputField';
+import ContactCopy from './ContactCopy';
 import TextWithIcon from './TextWithIcon';
+import { Roboto } from '@next/font/google';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { hCAPTCHA_SITE_KEY } from '../constants';
-import { Inter, Roboto } from '@next/font/google';
 import React, { useEffect, useState } from 'react';
 import { iconPaths } from '../constants/iconPaths';
 import { errorMessages, regex } from '../constants/validation';
-import Image from 'next/image';
 
-const inter = Inter({ subsets: ['latin'] });
 const roboto = Roboto({ weight: '400', subsets: ['latin'] });
 
 export default function Form() {
   const [email, setEmail] = useState('');
-  const [fullName, setFullName] = useState('');
   const [message, setMessage] = useState('');
+  const [fullName, setFullName] = useState('');
   const [validated, setValidated] = useState(false);
   const [isVerified, setIsVerified] = useState(false);
+  const [messageStored, setMessageStored] = useState(false);
   const [errors, setErrors] = useState({
     email: '',
     fullName: '',
@@ -37,8 +37,14 @@ export default function Form() {
       return;
     }
 
-    console.log('Send the Message...');
+    storeMessage();
   }, [validated, isVerified]);
+
+  useEffect(() => {
+    if (messageStored) {
+      return clearFields();
+    }
+  }, [messageStored]);
 
   function validateForm() {
     let isValid = true;
@@ -67,6 +73,41 @@ export default function Form() {
     return isValid;
   }
 
+  async function storeMessage() {
+    try {
+      const documentId = await nanoid();
+      const res = await fetch('/api/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          documentId,
+          email,
+          fullName,
+          message,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        alert('success');
+        setMessageStored(true); // TODO: display a flash message
+      } else {
+        throw new Error('Failed to write the document');
+      }
+    } catch (e) {
+      alert('oops!');
+      console.error('Error adding document: ', e);
+    }
+  }
+
+  function clearFields() {
+    // Clear input fields
+    setEmail('');
+    setFullName('');
+    setMessage('');
+  }
+
   async function handleCAPTCHA(token) {
     const res = await fetch('/api/verifyhCAPTCHA', {
       method: 'POST',
@@ -76,24 +117,17 @@ export default function Form() {
       }),
     });
 
-    const data = await res.json();
+    const { success } = await res.json();
 
-    setIsVerified(true);
+    console.log({ success });
+
+    success && setIsVerified(true);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     const isValid = validateForm();
-    if (isValid && isVerified) {
-      // Submit form logic here
-      console.log('Form validated and verified successfully!');
-      setValidated(true);
-
-      // Clear input fields
-      setEmail('');
-      setFullName('');
-      setMessage('');
-    }
+    setValidated(isValid);
   }
 
   return (
@@ -103,33 +137,8 @@ export default function Form() {
         'bg-primary-600 text-gray-100 px-4 md:px-8 py-12'
       )}
     >
-      <div className="max-w-screen-xl mt-24 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
-        <div className="flex flex-col justify-between">
-          <div>
-            <h2
-              className={classNames(
-                inter.className,
-                'text-4xl lg:text-5xl font-bold leading-tight'
-              )}
-            >
-              Let&apos;s talk about everything!
-            </h2>
-            <div className="text-gray-700 mt-8">
-              Hate forms? Send me an{' '}
-              <Link href="mailto:rdaahal@gmail.com" className="underline">
-                email
-              </Link>{' '}
-              instead.
-            </div>
-          </div>
-          <Image
-            src="/images/contact.svg"
-            alt="Contact Us Illustration"
-            width={480}
-            height={300}
-            className="block mt-8 text-center"
-          />
-        </div>
+      <div className="max-w-screen-xl mt-24 px-4 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
+        <ContactCopy />
         <form onSubmit={handleSubmit}>
           <InputField
             id="email"
@@ -171,14 +180,20 @@ export default function Form() {
           <HCaptcha sitekey={hCAPTCHA_SITE_KEY} onVerify={handleCAPTCHA} />
 
           <button
-            disabled={!isVerified && !validated}
+            disabled={(!isVerified && !validated) || messageStored}
             type="submit"
             className={classNames(
               'w-full py-2 px-4 bg-primary-400 text-gray-100 rounded hover:bg-primary-500',
-              { 'opacity-50 cursor-not-allowed': !isVerified && !validated }
+              {
+                'opacity-50 cursor-not-allowed':
+                  (!isVerified && !validated) || messageStored,
+              }
             )}
           >
-            <TextWithIcon label="Send" iconPathData={iconPaths.send} />
+            <TextWithIcon
+              label={messageStored ? 'Sent' : 'Send'}
+              iconPathData={iconPaths.send}
+            />
           </button>
         </form>
       </div>
