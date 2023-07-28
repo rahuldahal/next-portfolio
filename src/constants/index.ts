@@ -139,3 +139,25 @@ export const hobbies: hobby[] = [
 export const hCAPTCHA_SITE_KEY = '98158277-e2ec-4215-b2df-7e65e9eb8ad7';
 export const VIDEO_PORTFOLIO_EMBEDD_LINK =
   'https://www.youtube.com/embed/OyJrwRGzCSY';
+
+export const time = {
+  ONE_SEC: 1000,
+  ONE_AND_HALF_SEC: 1500,
+  TWO_SEC: 2000,
+  TWO_AND_HALF_SEC: 2500,
+  THREE_SEC: 3000,
+  THREE_AND_HALF_SEC: 3500,
+  FOUR_SEC: 4000,
+  FOUR_AND_HALF_SEC: 4500,
+  FIVE_SEC: 5000,
+  FIVE_AND_HALF_SEC: 5500,
+  SIX_SEC: 6000,
+  SIX_AND_HALF_SEC: 6500,
+  SEVEN_SEC: 7000,
+  SEVEN_AND_HALF_SEC: 7500,
+  EIGHT_SEC: 8000,
+  EIGHT_AND_HALF_SEC: 8500,
+  NINE_SEC: 9000,
+  NINE_AND_HALF_SEC: 9500,
+  TEN_SEC: 10000,
+};

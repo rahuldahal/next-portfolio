@@ -8,3 +8,5 @@ export const errorMessages = {
   fullname: 'The provided input is not alphabetic.',
   message: 'The message must not exceed 100 characters.',
 };
+
+export const successMessage = 'The message has been sent successfully';

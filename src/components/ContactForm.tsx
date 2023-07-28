@@ -6,10 +6,11 @@ import ContactCopy from './ContactCopy';
 import TextWithIcon from './TextWithIcon';
 import { Roboto } from '@next/font/google';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
-import { hCAPTCHA_SITE_KEY } from '../constants';
+import { hCAPTCHA_SITE_KEY, time } from '../constants';
 import React, { useEffect, useState } from 'react';
 import { iconPaths } from '../constants/iconPaths';
-import { errorMessages, regex } from '../constants/validation';
+import { errorMessages, regex, successMessage } from '../constants/validation';
+import FlashMessage, { FlashMessageType } from './FlashMessage';
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'] });
 
@@ -18,8 +19,14 @@ export default function Form() {
   const [message, setMessage] = useState('');
   const [fullName, setFullName] = useState('');
   const [validated, setValidated] = useState(false);
+  const [verifying, setVerifying] = useState(false);
   const [isVerified, setIsVerified] = useState(false);
   const [messageStored, setMessageStored] = useState(false);
+  const [showFlashMessage, setShowFlashMessage] = useState({
+    type: null,
+    message: '',
+  });
+
   const [errors, setErrors] = useState({
     email: '',
     fullName: '',
@@ -37,12 +44,14 @@ export default function Form() {
       return;
     }
 
+    setVerifying(false);
     storeMessage();
   }, [validated, isVerified]);
 
   useEffect(() => {
     if (messageStored) {
-      return clearFields();
+      clearFields();
+      showMessage('success', successMessage);
     }
   }, [messageStored]);
 
@@ -73,8 +82,18 @@ export default function Form() {
     return isValid;
   }
 
+  function showMessage(type: FlashMessageType, message: string) {
+    setShowFlashMessage({ type, message });
+    setTimeout(
+      () => setShowFlashMessage({ type: null, message: '' }),
+      time.FIVE_SEC
+    ); // Auto-hide after 5 seconds
+  }
+
   async function storeMessage() {
     try {
+      showMessage('info', 'Trying to send the message.');
+
       const documentId = await nanoid();
       const res = await fetch('/api/messages', {
         method: 'POST',
@@ -90,13 +109,16 @@ export default function Form() {
       const data = await res.json();
 
       if (data.success) {
-        alert('success');
-        setMessageStored(true); // TODO: display a flash message
+        setMessageStored(true);
       } else {
-        throw new Error('Failed to write the document');
+        showMessage('error', 'Failed to send the message.');
+        setTimeout(
+          () => showMessage('info', 'Send an e-mail instead?'),
+          time.FIVE_AND_HALF_SEC
+        );
       }
     } catch (e) {
-      alert('oops!');
+      showMessage('error', 'Failed to send the message.');
       console.error('Error adding document: ', e);
     }
   }
@@ -109,6 +131,7 @@ export default function Form() {
   }
 
   async function handleCAPTCHA(token) {
+    setVerifying(true);
     const res = await fetch('/api/verifyhCAPTCHA', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -119,9 +142,7 @@ export default function Form() {
 
     const { success } = await res.json();
 
-    console.log({ success });
-
-    success && setIsVerified(true);
+    setIsVerified(success);
   }
 
   function handleSubmit(e) {
@@ -139,7 +160,10 @@ export default function Form() {
     >
       <div className="max-w-screen-xl mt-24 px-4 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
         <ContactCopy />
-        <form onSubmit={handleSubmit}>
+        <form
+          className={verifying ? 'animate-pulse' : ''}
+          onSubmit={handleSubmit}
+        >
           <InputField
             id="email"
             label="Email"
@@ -197,6 +221,18 @@ export default function Form() {
           </button>
         </form>
       </div>
+      {showFlashMessage.type && (
+        <FlashMessage
+          type={showFlashMessage.type}
+          message={showFlashMessage.message}
+          onClose={() =>
+            setShowFlashMessage({
+              type: null,
+              message: '',
+            })
+          }
+        />
+      )}
     </section>
   );
 }

@@ -259,6 +259,30 @@ header::after {
   animation-delay: 2s;
 }
 
+.flashMessage {
+  transform: translateY(100%);
+  opacity: 0;
+  animation: slideUpAndDown 3s ease-in forwards;
+}
+
+@keyframes slideUpAndDown {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(70%);
+  }
+}
+
 @keyframes fade-in {
   100% {
     opacity: 1;
