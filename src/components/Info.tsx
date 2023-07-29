@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import classNames from 'classnames';
+import Experience from './Experience';
+import TextWithIcon from './TextWithIcon';
 import { expertiseList } from '../constants';
 import { Inter, Roboto } from '@next/font/google';
-import WorkExperienceCarousel from './WorkExperienceCarousel';
-import TextWithIcon from './TextWithIcon';
 import { iconPaths } from '../constants/iconPaths';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -77,7 +77,7 @@ export default function Info() {
       </div>
 
       <div className="grow">
-        <WorkExperienceCarousel />
+        <Experience />
         <a
           href="https://bit.ly/resume_rahul_dahal"
           className="block max-w-max bg-primary-400 hover:bg-primary-500 text-gray-100 py-2 px-4 my-6 mx-auto rounded focus:outline-none focus:shadow-outline"
