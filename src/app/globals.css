@@ -248,6 +248,12 @@ header::after {
   }
 }
 
+@media (max-width: 768px) {
+  .expertise-container {
+    width: calc(100vw - 4rem);
+  }
+}
+
 [data-hcaptcha-widget-id] {
   margin: auto;
   margin-bottom: 1rem;

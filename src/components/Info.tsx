@@ -61,15 +61,17 @@ export default function Info() {
           >
             Area of Expertise
           </h3>
-          <div className="flex flex-wrap justify-center">
-            {expertiseList.map((expertise, index) => (
-              <div
-                key={index}
-                className="bg-gray-100 text-gray-700 rounded-full px-4 py-2 m-1"
-              >
-                {expertise}
-              </div>
-            ))}
+          <div className="flex justify-start md:flex-wrap md:justify-center">
+            <div className="expertise-container flex overflow-x-auto whitespace-nowrap md:flex-wrap md:justify-center">
+              {expertiseList.map((expertise, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-100 text-gray-700 rounded-full px-4 py-2 m-1"
+                >
+                  {expertise}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
