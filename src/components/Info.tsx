@@ -42,7 +42,9 @@ export default function Info() {
         >
           Rahul Dahal
         </h1>
-        <p className="text-gray-600 mb-6">Software Engineer</p>
+        <p className="text-gray-600 mb-6 w-full text-center">
+          Software Engineer
+        </p>
         <p className="text-gray-700 mb-4 max-w-xl text-center">
           A self-motivated and passionate individual who discovered my love for
           web development in early 2018 through a YouTube video recommended by
