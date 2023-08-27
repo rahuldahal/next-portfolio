@@ -79,7 +79,7 @@ export default function Info() {
       <div className="grow">
         <Experience />
         <a
-          href="https://bit.ly/resume_rahul_dahal"
+          href="https://drive.google.com/file/d/1PMUU4FYTJ67qlbeNWgi7A4tS20tkXEIO/view?usp=sharing"
           className="block max-w-max bg-primary-400 hover:bg-primary-500 text-gray-100 py-2 px-4 my-6 mx-auto rounded focus:outline-none focus:shadow-outline"
           download="Rahul_Dahal_Resume.pdf"
         >
