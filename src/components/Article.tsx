@@ -18,7 +18,7 @@ const inter = Inter({ subsets: ['latin'] });
 const roboto = Roboto({ weight: '400', subsets: ['latin'] });
 
 export default function Article({ article }) {
-  const { title, contentMarkdown, coverImage, dateAdded, dateUpdated, tags } =
+  const { title, content, coverImage, publishedAt, updatedAt, readTimeInMinutes, tags } =
     article;
 
   useEffect(() => {
@@ -26,13 +26,8 @@ export default function Article({ article }) {
     handleLoader({ show: false });
   }, []);
 
-  function minutesToRead() {
-    const words = contentMarkdown.split(' ').length;
-    return Math.floor(words / 150) || 1;
-  }
-
-  const datePublished = formatDate(dateAdded);
-  const lastUpdated = dateUpdated ? formatDate(dateUpdated) : datePublished;
+  const datePublished = formatDate(publishedAt);
+  const lastUpdated = updatedAt ? formatDate(updatedAt) : datePublished;
 
   function handleShare() {
     const data = {
@@ -57,7 +52,7 @@ export default function Article({ article }) {
       <div className="md:max-w-3xl mx-auto">
         <div className="relative">
           <Image
-            src={coverImage}
+            src={coverImage.url}
             alt="Cover Image"
             className="mb-4 rounded-lg object-cover object-top max-h-80 w-full mx-auto md:max-w-3xl"
             width={768}
@@ -95,7 +90,7 @@ export default function Article({ article }) {
           overrides={markdownOptions}
           className="md:bg-gray-100 text-gray-700 w-full md:max-w-4xl mt-4 md:px-4 py-4 rounded-lg markdown-content"
         >
-          {contentMarkdown}
+          {content.markdown}
         </Markdown>
 
         <button

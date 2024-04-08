@@ -14,7 +14,7 @@ export default function TextWithIcon({
 }: props): JSX.Element {
   return (
     <span
-      className={classNames('flex justify-center gap-2', {
+      className={classNames('flex items-center justify-center gap-2', {
         'flex-row-reverse': iconOnLeft,
       })}
     >
