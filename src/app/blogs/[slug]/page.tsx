@@ -1,6 +1,7 @@
 import Header from '../../../components/Header';
 import Article from '../../../components/Article';
 import {headers} from 'next/headers';
+import Error400 from '../../../components/Error400';
 
 async function getArticle(id: string) {
   const query = `
@@ -49,15 +50,20 @@ async function getArticle(id: string) {
     console.log(error);
   }
 }
+interface SearchParams {
+  searchParams: {
+    id?: string | undefined;
+  }
+}
 
-export default async function BlogPage() {
-  const headersList = headers();
-  const referer = headersList.get('referer') || '';
-  
-  const url = new URL(referer);
-  const id = url.searchParams.get('id');
-  const article = await getArticle(id);    
-  
+export default async function BlogPage({ searchParams }: SearchParams) {
+  // Check if searchParams object or id parameter is missing
+  if (!searchParams || !searchParams.id) {
+    return <><Header activeNav="blogs" /><Error400 /></>;
+  }
+
+  const article = await getArticle(searchParams.id);
+
   return (
     <>
       <Header activeNav="blogs" />
@@ -65,3 +71,4 @@ export default async function BlogPage() {
     </>
   );
 }
+
