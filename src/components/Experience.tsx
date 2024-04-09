@@ -26,12 +26,8 @@ export default function Experience(): JSX.Element {
       <h3
         className={`${inter.className} text-gray-800 text-3xl font-bold text-center`}
       >
-        Professional Experience<sup>*</sup>
+        Professional Experience
       </h3>
-      <small className="text-gray-700 block text-center my-3">
-        <sup>*</sup>Listed from latest to oldest, scroll towards left for
-        more...
-      </small>
       <Slider {...settings}>
         {sortCompanies(professionalBackgrounds).map((background, index) => (
           <div key={index} className="py-6 md:w-1/2 lg:w-1/3">

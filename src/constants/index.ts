@@ -39,15 +39,14 @@ export const navLinks: { text: string; path: string }[] = [
 export const expertiseList: string[] = [
   'Core JavaScript',
   'Node.js',
-  'React.js',
-  'Next.js',
+  'Nest.js',
   'Microservices',
-  'Docker',
-  'MongoDB',
+  'Next.js',
   'PostgreSQL',
-  'Vue.js',
-  'Linux Kernel and Command Line',
+  'MongoDB',
+  'Docker',
   'Basic DevOps',
+  'Linux Kernel and Command Line',
 ];
 
 export interface workDetail {
@@ -63,9 +62,8 @@ export const professionalBackgrounds: workDetail[] = [
     duration: 'Aug 03, 2021 - Oct 27, 2021',
     description: [
       'Used Vue.js to build UI components',
-      'Optimized memory leaks and performance',
-      'Used Cypress.js for end-to-end testing',
-      'Followed the company’s coding standards and culture',
+      'Collaborated cross-functionally to implement memory leak detection strategies, leading to ~20% increase in application stability and decrease in customer-reported crashes',
+      'Utilized innovative thinking and problem-solving skills to develop and implement creative solutions for about 12 complex issues, contributing to the reduction in average issue resolution time.'
     ],
   },
   {
@@ -73,9 +71,8 @@ export const professionalBackgrounds: workDetail[] = [
     role: 'Associate Software Engineer',
     duration: 'Nov 17, 2021 - Jul 18, 2022',
     description: [
-      'Worked collaboratively within the team to develop high-quality software solutions',
+      'Collaborated with a dynamic team of 10-15 professionals to successfully deliver various features on an existing Enterprise Resources Planning system.',
       'Followed the company’s coding standards, policies, processes, and working culture',
-      'Communicated new ideas, issues, status, and outcomes with the supervisor/team',
       'Learned and applied version control tools, project management tools, agile methodology, project-level technologies, and code review process',
     ],
   },
