@@ -31,6 +31,16 @@
   );
 }
 
+::-moz-selection { /* Code for Firefox */
+  color: #f8f8f8;
+  background: rgb(var(--primary-RGB));
+}
+
+::selection {
+  color: #f8f8f8;
+  background: rgb(var(--primary-RGB));
+}
+
 body {
   overflow-x: hidden;
 }
