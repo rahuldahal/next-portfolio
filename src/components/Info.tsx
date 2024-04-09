@@ -24,7 +24,7 @@ export default function Info() {
           title="View full size image"
           target="_blank"
         >
-          <div className="w-48 h-48">
+          <div className="w-48 h-48 border-gray-800 rounded-full">
             <Image
               src="/images/rahul.jpg"
               alt="Profile"
@@ -50,7 +50,7 @@ export default function Info() {
           web development in early 2018 through a YouTube video recommended by
           The New Boston channel. Bucky Roberts, the channel&apos;s instructor,
           introduced me to the fundamentals of web development, which sparked my
-          interest in learning more.
+          interest in <Link href="/about" className='text-primary-400'>learning more</Link>.
         </p>
         <div className="p-4 max-w-xl rounded bg-primary-500 my-4">
           <h3
