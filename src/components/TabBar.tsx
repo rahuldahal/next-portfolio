@@ -16,10 +16,10 @@ export default function TabBar({ active }): JSX.Element {
               key={index}
               href={path}
               className={classNames(
-                'text-gray-200 p-4 transition duration-300 ease-in-out hover:bg-primary-600 rounded-md text-base',
+                'text-gray-200 p-4 transition duration-300 ease-in-out hover:bg-primary-600 rounded-md flex flex-col gap-1 items-center justify-center',
                 {
                   'bg-primary-600 text-gray-100': active === text.toLowerCase(),
-                }
+                },
               )}
               onClick={() => handleLoader({ show: true })}
             >
@@ -27,6 +27,7 @@ export default function TabBar({ active }): JSX.Element {
                 iconPathData={iconPaths[text.toLowerCase()]}
                 className="w-6"
               />
+              <p className="text-xs">{text}</p>
             </Link>
           );
         })}

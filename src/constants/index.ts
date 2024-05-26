@@ -19,8 +19,8 @@ export const metaData = {
 
 export const navLinks: { text: string; path: string }[] = [
   {
-    text: 'About',
-    path: '/about',
+    text: 'Projects',
+    path: '/projects',
   },
   {
     text: 'Community',
@@ -63,7 +63,7 @@ export const professionalBackgrounds: workDetail[] = [
     description: [
       'Used Vue.js to build UI components',
       'Collaborated cross-functionally to implement memory leak detection strategies, leading to ~20% increase in application stability and decrease in customer-reported crashes',
-      'Utilized innovative thinking and problem-solving skills to develop and implement creative solutions for about 12 complex issues, contributing to the reduction in average issue resolution time.'
+      'Utilized innovative thinking and problem-solving skills to develop and implement creative solutions for about 12 complex issues, contributing to the reduction in average issue resolution time.',
     ],
   },
   {
