@@ -15,7 +15,7 @@ export default function Info() {
     <section
       className={classNames(
         roboto.className,
-        'container flex flex-col sm:flex-row justify-center items-start gap-8 my-8 mx-auto px-4 pb-12 md:pb-0'
+        'container flex flex-col sm:flex-row justify-center items-start gap-8 my-8 mx-auto px-4 pb-12 md:pb-0',
       )}
     >
       <div className="flex flex-col items-center">
@@ -37,7 +37,7 @@ export default function Info() {
         <h1
           className={classNames(
             inter.className,
-            'text-gray-800 text-3xl font-bold my-2'
+            'text-gray-800 text-3xl font-bold my-2',
           )}
         >
           Rahul Dahal
@@ -47,16 +47,20 @@ export default function Info() {
         </p>
         <p className="text-gray-700 mb-4 max-w-xl text-center">
           A self-motivated and passionate individual who discovered my love for
-          web development in early 2018 through a YouTube video recommended by
-          The New Boston channel. Bucky Roberts, the channel&apos;s instructor,
-          introduced me to the fundamentals of web development, which sparked my
-          interest in <Link href="/about" className='text-primary-400'>learning more</Link>.
+          software engineering in early 2018 through a YouTube video recommended
+          by The New Boston channel. Bucky Roberts, the channel&apos;s
+          instructor, introduced me to the fundamentals of software engineering,
+          which sparked my interest in{' '}
+          <Link href="/community" className="text-primary-400">
+            learning more
+          </Link>
+          .
         </p>
         <div className="p-4 max-w-xl rounded bg-primary-500 my-4">
           <h3
             className={classNames(
               inter.className,
-              'text-xl font-bold mb-2 text-gray-100'
+              'text-xl font-bold mb-2 text-gray-100',
             )}
           >
             Area of Expertise
