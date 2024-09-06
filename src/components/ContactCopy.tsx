@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import classNames from 'classnames';
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,7 +14,7 @@ export default function ContactCopy(): JSX.Element {
         <h2
           className={classNames(
             inter.className,
-            'text-4xl lg:text-5xl font-bold leading-tight'
+            'text-4xl lg:text-5xl font-bold leading-tight',
           )}
         >
           Let&apos;s talk about everything!

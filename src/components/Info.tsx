@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Experience from './Experience';
 import TextWithIcon from './TextWithIcon';
 import { expertiseList } from '../constants';
-import { Inter, Roboto } from '@next/font/google';
+import { Inter, Roboto } from 'next/font/google';
 import { iconPaths } from '../constants/iconPaths';
 
 const inter = Inter({ subsets: ['latin'] });

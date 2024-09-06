@@ -2,7 +2,7 @@
 
 import Nav from './Nav';
 import Link from 'next/link';
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 

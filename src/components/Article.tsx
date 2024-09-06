@@ -9,7 +9,7 @@ import TextWithIcon from './TextWithIcon';
 import 'prismjs/components/prism-javascript';
 import { handleLoader } from '../utils/loader';
 import { markdownOptions } from '../constants';
-import { Inter, Roboto } from '@next/font/google';
+import { Inter, Roboto } from 'next/font/google';
 import { iconPaths } from '../constants/iconPaths';
 import 'prism-themes/themes/prism-one-dark.min.css';
 import { formatDate } from '../utils';
@@ -18,8 +18,15 @@ const inter = Inter({ subsets: ['latin'] });
 const roboto = Roboto({ weight: '400', subsets: ['latin'] });
 
 export default function Article({ article }) {
-  const { title, content, coverImage, publishedAt, updatedAt, readTimeInMinutes, tags } =
-    article;
+  const {
+    title,
+    content,
+    coverImage,
+    publishedAt,
+    updatedAt,
+    readTimeInMinutes,
+    tags,
+  } = article;
 
   useEffect(() => {
     Prism.highlightAll();
@@ -46,7 +53,7 @@ export default function Article({ article }) {
     <article
       className={classNames(
         roboto.className,
-        'container mx-auto px-4 pt-40 pb-20 md:pb-8'
+        'container mx-auto px-4 pt-40 pb-20 md:pb-8',
       )}
     >
       <div className="md:max-w-3xl mx-auto">
@@ -61,7 +68,7 @@ export default function Article({ article }) {
           <h1
             className={classNames(
               inter.className,
-              'w-full md:w-4/5 absolute -bottom-8 -right-3 md:-right-8 bg-gray-100 bg-opacity-90 first-letter: text-4xl font-bold mb-2 rounded-lg px-4 py-2 text-primary-400'
+              'w-full md:w-4/5 absolute -bottom-8 -right-3 md:-right-8 bg-gray-100 bg-opacity-90 first-letter: text-4xl font-bold mb-2 rounded-lg px-4 py-2 text-primary-400',
             )}
           >
             {title}

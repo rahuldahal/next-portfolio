@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import { sortCompanies } from '../utils';
 import 'slick-carousel/slick/slick-theme.css';
-import { Inter, Roboto } from '@next/font/google';
+import { Inter, Roboto } from 'next/font/google';
 import { professionalBackgrounds } from '../constants';
 
 const inter = Inter({ subsets: ['latin'] });

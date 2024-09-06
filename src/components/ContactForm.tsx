@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid/async';
 import InputField from './InputField';
 import ContactCopy from './ContactCopy';
 import TextWithIcon from './TextWithIcon';
-import { Roboto } from '@next/font/google';
+import { Roboto } from 'next/font/google';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { hCAPTCHA_SITE_KEY, time } from '../constants';
 import React, { useEffect, useState } from 'react';
@@ -86,7 +86,7 @@ export default function Form() {
     setShowFlashMessage({ type, message });
     setTimeout(
       () => setShowFlashMessage({ type: null, message: '' }),
-      time.FIVE_SEC
+      time.FIVE_SEC,
     ); // Auto-hide after 5 seconds
   }
 
@@ -114,7 +114,7 @@ export default function Form() {
         showMessage('error', 'Failed to send the message.');
         setTimeout(
           () => showMessage('info', 'Send an e-mail instead?'),
-          time.FIVE_AND_HALF_SEC
+          time.FIVE_AND_HALF_SEC,
         );
       }
     } catch (e) {
@@ -155,7 +155,7 @@ export default function Form() {
     <section
       className={classNames(
         roboto.className,
-        'bg-primary-600 text-gray-100 px-4 md:px-8 py-12'
+        'bg-primary-600 text-gray-100 px-4 md:px-8 py-12',
       )}
     >
       <div className="max-w-screen-xl mt-24 px-4 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
@@ -191,7 +191,7 @@ export default function Form() {
               id="message"
               className={classNames(
                 'w-full px-4 py-2 bg-gray-200 border rounded focus:outline-none focus:border-primary-400',
-                { 'border-red-500': errors.message }
+                { 'border-red-500': errors.message },
               )}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -211,7 +211,7 @@ export default function Form() {
               {
                 'opacity-50 cursor-not-allowed':
                   (!isVerified && !validated) || messageStored,
-              }
+              },
             )}
           >
             <TextWithIcon

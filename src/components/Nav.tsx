@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import classNames from 'classnames';
 import { navLinks } from '../constants';
-import { Roboto } from '@next/font/google';
+import { Roboto } from 'next/font/google';
 import useBreakpoint from '../hooks/useBreakpoint';
 import NavBar from './NavBar';
 import TabBar from './TabBar';
