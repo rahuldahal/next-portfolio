@@ -31,7 +31,8 @@
   );
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   color: #f8f8f8;
   background: rgb(var(--primary-RGB));
 }

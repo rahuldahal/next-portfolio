@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Header from '../../components/Header';
-import { handleLoader } from '../../utils/loader';
+import { handleLoader } from '@/utils/loader';
 
 const CommunityPage = () => {
   useEffect(() => {

@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import classNames from 'classnames';
-import Experience from './Experience';
 import TextWithIcon from './TextWithIcon';
 import { expertiseList } from '../constants';
 import { Inter, Roboto } from 'next/font/google';
@@ -81,7 +80,6 @@ export default function Info() {
       </div>
 
       <div className="grow">
-        <Experience />
         <a
           href="https://drive.google.com/file/d/1PMUU4FYTJ67qlbeNWgi7A4tS20tkXEIO/view?usp=sharing"
           className="block max-w-max bg-primary-400 hover:bg-primary-500 text-gray-100 py-2 px-4 my-6 mx-auto rounded focus:outline-none focus:shadow-outline"
