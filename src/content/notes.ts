@@ -1,0 +1,91 @@
+import type { Note } from "./types";
+
+export const notes: Note[] = [
+  {
+    slug: "indices-are-not-free",
+    date: "2026-06-15",
+    title: "Indices are not free",
+    body: "Every index is a write tax you pay forever in exchange for reads you may or may not run. I keep meeting teams who have ten indices on a table and use three.",
+    tags: ["postgres"],
+  },
+  {
+    slug: "the-runbook-is-the-product",
+    date: "2026-06-11",
+    title: "The runbook is the product",
+    body: "If the service can only be operated by the person who built it, you have not finished building it. The runbook is the part where engineering becomes operations.",
+    tags: ["ops", "craft"],
+  },
+  {
+    slug: "small-deploys",
+    date: "2026-06-04",
+    title: "Small deploys, often",
+    body: "A deploy that takes six hours to roll back is not a deploy, it is a renovation. Optimize for the size of the change you can revert in one click.",
+    tags: ["ci", "devops"],
+  },
+  {
+    slug: "logs-are-a-design-decision",
+    date: "2026-05-22",
+    title: "Logs are a design decision",
+    body: "Every log line is a tiny API your future self will depend on. Treat them like a public interface — versioned, structured, ruthlessly pruned.",
+    tags: ["observability"],
+    links: [
+      { title: "The Sidekick Pattern", href: "https://www.honeycomb.io/blog/structured-logging" },
+    ],
+  },
+  {
+    slug: "rest-is-fine",
+    date: "2026-05-09",
+    title: "REST is fine",
+    body: "I keep watching teams rip out a working REST API for a GraphQL one they will replace with tRPC inside a year. The shape of your network calls is rarely the bottleneck.",
+    tags: ["api", "craft"],
+  },
+  {
+    slug: "two-engineers-and-a-shell",
+    date: "2026-04-30",
+    title: "Two engineers and a shell",
+    body: "Most operational outages I have been part of were ultimately fixed by two engineers and a shared shell. The tooling we wrap around that fact matters less than we admit.",
+    tags: ["ops"],
+  },
+  {
+    slug: "code-review-as-archeology",
+    date: "2026-04-18",
+    title: "Code review as archeology",
+    body: "The best reviews I have received did not just look at the diff — they looked at why the file existed at all, and gently asked whether it still should.",
+    tags: ["craft"],
+  },
+  {
+    slug: "feature-flags-are-tech-debt",
+    date: "2026-04-02",
+    title: "Feature flags are tech debt with a calendar",
+    body: "Every flag is a promise to delete a branch of your code later. Treat the flag's ticket and its deletion ticket as the same ticket.",
+    tags: ["process"],
+  },
+  {
+    slug: "boring-stacks",
+    date: "2026-03-21",
+    title: "On boring stacks",
+    body: "Postgres, a queue, and a script that runs every minute will get you further than you think before the architecture diagram needs to grow.",
+    tags: ["craft"],
+  },
+  {
+    slug: "the-monorepo-test",
+    date: "2026-03-08",
+    title: "The monorepo test",
+    body: "If a change spans three repos and you cannot land it in one PR, you do not have services. You have a distributed monolith and worse tooling.",
+    tags: ["monorepo"],
+  },
+  {
+    slug: "observability-is-a-budget",
+    date: "2026-02-26",
+    title: "Observability is a budget",
+    body: "You can afford to log everything until you cannot. Decide the budget before the bill arrives. Sampling is not a failure, it is the answer.",
+    tags: ["observability"],
+  },
+  {
+    slug: "writing-as-debugging",
+    date: "2026-02-14",
+    title: "Writing as debugging",
+    body: "Half the bugs I fix get fixed in the paragraph where I describe the bug to someone else. The other half get fixed because I had to type the description.",
+    tags: ["craft"],
+  },
+];
