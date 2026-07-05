@@ -6,7 +6,7 @@ import { SectionHeader, Tag, FormatDate } from "@/components/primitives";
 export const metadata: Metadata = {
   title: "Notes",
   description: "Short thoughts, half-finished ideas, and observations.",
-  openGraph: { title: "Notes — Rahul Dahal", url: "/notes" },
+  openGraph: { title: "Notes · Rahul Dahal", url: "/notes" },
   alternates: { canonical: "/notes" },
 };
 
@@ -16,7 +16,7 @@ export default function NotesIndex() {
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
       <SectionHeader index="notes" title="Working out loud" />
       <p className="-mt-2 mb-10 max-w-xl text-sm text-muted-foreground">
-        Short, dated, ungroomed. The opposite of essays — these are the thoughts I am still chewing.
+        Short, dated, ungroomed. The opposite of essays: these are the thoughts I am still chewing.
       </p>
       <ul className="space-y-4">
         {items.map((n) => (

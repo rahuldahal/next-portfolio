@@ -6,7 +6,7 @@ import { SocialIcon } from "@/components/SocialIcon";
 export const metadata: Metadata = {
   title: "About",
   description: "About Rahul Dahal, the site, and how it is built.",
-  openGraph: { title: "About — Rahul Dahal", url: "/about" },
+  openGraph: { title: "About · Rahul Dahal", url: "/about" },
   alternates: { canonical: "/about" },
 };
 
@@ -19,13 +19,13 @@ export default function About() {
         <p>
           I am <strong className="text-foreground">{profile.name}</strong>, a software engineer
           working primarily in JavaScript and TypeScript on the seams where applications meet
-          infrastructure — pooling, observability, deploys, the boring middle.
+          infrastructure: pooling, observability, deploys, the boring middle.
         </p>
         <p>{profile.bio}</p>
         <p>
           This site is not a portfolio and not a resume. It&apos;s the reading list, the
           writing, and the small notes that make up how I actually think about the
-          work — kept in one place so I can find them, and so anyone curious can too.
+          work, all kept in one place so I can find them, and so anyone curious can too.
         </p>
       </section>
 
@@ -63,14 +63,6 @@ export default function About() {
             </div>
           ))}
         </dl>
-      </section>
-
-      <section className="mt-12">
-        <div className="font-mono text-[11px] uppercase tracking-widest text-subtle">Colophon</div>
-        <p className="mt-3 text-muted-foreground">
-          Built on Next.js, React 19, and Tailwind v4. Set in Poppins and Roboto,
-          with JetBrains Mono for code. No analytics, no tracking, no cookie banner.
-        </p>
       </section>
     </div>
   );

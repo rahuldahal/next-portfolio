@@ -6,7 +6,7 @@ import { SectionHeader, Tag } from "@/components/primitives";
 export const metadata: Metadata = {
   title: "Packages",
   description: "Libraries and tools I recommend, and why.",
-  openGraph: { title: "Packages — Rahul Dahal", url: "/packages" },
+  openGraph: { title: "Packages · Rahul Dahal", url: "/packages" },
   alternates: { canonical: "/packages" },
 };
 

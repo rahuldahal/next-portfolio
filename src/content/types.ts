@@ -7,7 +7,6 @@ export interface Profile {
   name: string;
   role: string;
   location: string;
-  status: string;
   socials: { label: string; href: string; handle: string }[];
   now: string[]; // current interests
   nowUpdated: string;

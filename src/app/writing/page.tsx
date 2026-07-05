@@ -6,7 +6,7 @@ import { SectionHeader, Tag, FormatDate } from "@/components/primitives";
 export const metadata: Metadata = {
   title: "Writing",
   description: "Long-form essays on scalability, JavaScript, and the boring middle of software.",
-  openGraph: { title: "Writing — Rahul Dahal", url: "/writing" },
+  openGraph: { title: "Writing · Rahul Dahal", url: "/writing" },
   alternates: { canonical: "/writing" },
 };
 

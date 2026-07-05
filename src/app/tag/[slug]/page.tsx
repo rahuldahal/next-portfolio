@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   return {
-    title: `#${slug} — Tags`,
+    title: `#${slug} · Tags`,
     description: `Everything tagged with #${slug}.`,
     alternates: { canonical: `/tag/${slug}` },
   };

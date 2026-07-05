@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const p = getPerson(slug);
   if (!p) return {};
   return {
-    title: `${p.name} — People`,
+    title: `${p.name} · People`,
     description: p.why,
     openGraph: { title: p.name, description: p.why, url: `/people/${p.slug}` },
     alternates: { canonical: `/people/${p.slug}` },

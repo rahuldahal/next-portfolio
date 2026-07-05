@@ -26,7 +26,7 @@ export const notes: Note[] = [
     slug: "logs-are-a-design-decision",
     date: "2026-05-22",
     title: "Logs are a design decision",
-    body: "Every log line is a tiny API your future self will depend on. Treat them like a public interface — versioned, structured, ruthlessly pruned.",
+    body: "Every log line is a tiny API your future self will depend on. Treat them like a public interface: versioned, structured, ruthlessly pruned.",
     tags: ["observability"],
     links: [
       { title: "The Sidekick Pattern", href: "https://www.honeycomb.io/blog/structured-logging" },
@@ -50,7 +50,7 @@ export const notes: Note[] = [
     slug: "code-review-as-archeology",
     date: "2026-04-18",
     title: "Code review as archeology",
-    body: "The best reviews I have received did not just look at the diff — they looked at why the file existed at all, and gently asked whether it still should.",
+    body: "The best reviews I have received did not just look at the diff. They looked at why the file existed at all, and gently asked whether it still should.",
     tags: ["craft"],
   },
   {

@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const n = getNote(slug);
   if (!n) return {};
   return {
-    title: `${n.title} — Notes`,
+    title: `${n.title} · Notes`,
     description: n.body.slice(0, 160),
     openGraph: { title: n.title, description: n.body.slice(0, 160), url: `/notes/${n.slug}` },
     alternates: { canonical: `/notes/${n.slug}` },

@@ -17,7 +17,7 @@ export const packages: Package[] = [
     slug: "hono",
     name: "hono",
     summary: "A small, fast web framework for the edge.",
-    why: "It compiles to whatever runtime you point it at — Workers, Deno, Bun, Node — without pretending the differences do not exist. The middleware story is small enough to hold in your head.",
+    why: "It compiles to whatever runtime you point it at, whether Workers, Deno, Bun, or Node, without pretending the differences do not exist. The middleware story is small enough to hold in your head.",
     url: "https://hono.dev",
     npm: "hono",
     tags: ["http", "edge", "typescript"],

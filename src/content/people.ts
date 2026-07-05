@@ -18,7 +18,7 @@ export const people: Person[] = [
     slug: "anthony-fu",
     name: "Anthony Fu",
     handle: "@antfu7",
-    why: "Tools that feel inevitable in retrospect. The discipline of shipping small, sharp libraries — unocss, vitest, slidev — is a craft I keep trying to learn.",
+    why: "Tools that feel inevitable in retrospect. The discipline of shipping small, sharp libraries like unocss, vitest, and slidev is a craft I keep trying to learn.",
     favoriteIdea: "If a tool is annoying enough to use that you write a wrapper, ship the wrapper.",
     handles: [
       { label: "X", href: "https://x.com/antfu7" },
@@ -44,7 +44,7 @@ export const people: Person[] = [
     slug: "lee-robinson",
     name: "Lee Robinson",
     handle: "@leeerob",
-    why: "Writes the kind of documentation that you wish came with every framework — narrative, specific, opinionated where it counts.",
+    why: "Writes the kind of documentation that you wish came with every framework: narrative, specific, and opinionated where it counts.",
     favoriteIdea: "Boring deploys are a feature.",
     handles: [
       { label: "X", href: "https://x.com/leeerob" },
@@ -66,7 +66,7 @@ export const people: Person[] = [
     slug: "john-ousterhout",
     name: "John Ousterhout",
     why: "A Philosophy of Software Design is the book I quote at code reviews. He treats complexity as the enemy with a precision most working engineers do not.",
-    favoriteIdea: "Modules should be deep — small interface, large implementation.",
+    favoriteIdea: "Modules should be deep: a small interface with a large implementation.",
     handles: [
       { label: "Stanford", href: "https://web.stanford.edu/~ouster/" },
     ],

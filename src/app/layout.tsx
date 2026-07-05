@@ -24,22 +24,22 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Rahul Dahal — Software engineer",
-    template: "%s — Rahul Dahal",
+    default: "Rahul Dahal · Software engineer",
+    template: "%s · Rahul Dahal",
   },
   description:
-    "Rahul Dahal — software engineer working on JavaScript, scalability, and DevOps. Writing, notes, and the tools I keep coming back to.",
+    "Rahul Dahal · software engineer working on JavaScript, scalability, and DevOps. Writing, notes, and the tools I keep coming back to.",
   authors: [{ name: "Rahul Dahal" }],
   openGraph: {
     siteName: "Rahul Dahal",
     type: "website",
-    title: "Rahul Dahal — Software engineer",
+    title: "Rahul Dahal · Software engineer",
     description:
       "Writing, notes, and tools from a software engineer working on JavaScript, scalability, and DevOps.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rahul Dahal — Software engineer",
+    title: "Rahul Dahal · Software engineer",
     description:
       "Writing, notes, and tools from a software engineer working on JavaScript, scalability, and DevOps.",
   },
