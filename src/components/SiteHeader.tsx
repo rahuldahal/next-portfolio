@@ -16,12 +16,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link href="/" className="group flex items-center gap-2">
-          <span
-            aria-hidden
-            className="grid h-6 w-6 place-items-center rounded-sm border border-border-strong bg-surface-2 font-mono text-[10px] font-medium text-accent"
-          >
-            R
-          </span>
+          <img src="/favicon.svg" alt="" aria-hidden className="h-6 w-6 rounded-sm" />
           <span className="font-serif text-lg font-semibold leading-none">Rahul Dahal</span>
         </Link>
 

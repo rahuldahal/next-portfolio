@@ -30,6 +30,14 @@ export const metadata: Metadata = {
   description:
     "Rahul Dahal · software engineer working on JavaScript, scalability, and DevOps. Writing, notes, and the tools I keep coming back to.",
   authors: [{ name: "Rahul Dahal" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     siteName: "Rahul Dahal",
     type: "website",
